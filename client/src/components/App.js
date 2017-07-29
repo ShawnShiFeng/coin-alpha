@@ -45,3 +45,10 @@ const matchDispatchToProps = dispatch =>
   bindActionCreators({
     sampleAction,
   }, dispatch);
+
+App.propTypes = {
+  sample: PropTypes.object.isRequired,
+  sampleAction: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);
