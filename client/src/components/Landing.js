@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// components
+import Header from './Header';
 import { sampleAction } from '../actions';
 import Satori from './Satori';
 // import './css/App.css';
@@ -30,6 +32,7 @@ class Landing extends Component {
     return (
       <div>
         <h2>Hello, world!</h2>
+        <Header />
         <Satori />
       </div>
     );
@@ -49,7 +52,7 @@ const matchDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-// App.propTypes = {
+// Landing.propTypes = {
 //   sample: PropTypes.object.isRequired,
 //   sampleAction: PropTypes.func.isRequired,
 // };
