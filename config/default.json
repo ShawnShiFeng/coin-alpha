@@ -1,0 +1,22 @@
+{
+  "knex": {
+    "client": "postgresql",
+    "connection": {
+      "database": "CoinAlpha",
+      "user": "postgres",
+      "password": "",
+      "host": "localhost",
+      "port": 5432
+    },
+    "pool": {
+      "min": 1,
+      "max": 2
+    },
+    "migrations": {
+      "directory": "db/migrations"
+    },
+    "seeds": {
+      "directory": "db/seeds"
+    }
+  }
+}
