@@ -26,4 +26,4 @@ const getGDXHistoricRates = (productId, start, end, granularity) => {
   });
 };
 
-getGDXHistoricRates();
+module.exports.getGDXHistoricRates = getGDXHistoricRates;
