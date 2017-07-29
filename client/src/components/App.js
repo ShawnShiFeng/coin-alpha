@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux';
 // components
 import Header from './Header';
 import { sampleAction } from '../actions';
-import './css/App.css';
+import Satori from './Satori';
+// import './css/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -22,16 +23,17 @@ class App extends Component {
   }
 
   handleSubmit() {
-    this.props.sampleAction();
+    // this.props.sampleAction();
   }
 
   render() {
-    const { sample } = this.props;
+    // const { sample } = this.props;
 
     return (
       <div>
         <h2>Hello, world!</h2>
         <Header />
+        <Satori />
       </div>
     );
   }
@@ -44,10 +46,11 @@ function mapStateToProps(state) {
   };
 }
 
-const matchDispatchToProps = dispatch =>
+const matchDispatchToProps = (dispatch) => {
   bindActionCreators({
     sampleAction,
   }, dispatch);
+};
 
 // App.propTypes = {
 //   sample: PropTypes.object.isRequired,
