@@ -23,6 +23,18 @@ class Dashboard extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  const { sample } = state;
+  return {
+    sample,
+  };
+}
+
+const matchDispatchToProps = (dispatch) => {
+  bindActionCreators({
+    sampleAction,
+  }, dispatch);
+};
 
 
 export default connect(mapStateToProps, matchDispatchToProps)(Dashboard);
