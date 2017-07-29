@@ -1,0 +1,23 @@
+{
+  "name": "coin-alpha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelhack-coinalpha/coin-alpha.git"
+  },
+  "author": "Team CoinAlpha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelhack-coinalpha/coin-alpha/issues"
+  },
+  "homepage": "https://github.com/angelhack-coinalpha/coin-alpha#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0"
+  }
+}
