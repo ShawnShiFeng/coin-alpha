@@ -33,3 +33,10 @@ class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { sample } = state;
+  return {
+    sample,
+  };
+}
