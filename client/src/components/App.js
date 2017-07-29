@@ -5,3 +5,31 @@ import { bindActionCreators } from 'redux';
 
 import { sampleAction } from '../actions';
 import './css/App.css';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  onChange() {
+  }
+
+  handleSubmit() {
+    this.props.sampleAction();
+  }
+
+  render() {
+    const { sample } = this.props;
+
+    return (
+      <div>
+        <h2>Hello, world!</h2>
+      </div>
+    );
+  }
+}
