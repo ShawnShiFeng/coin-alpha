@@ -3,7 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 // const knex = require('knex')(require('../knexfile'));
-const { getGDXHistoricRates } = require('./gdax/gdax.js');
+const { getGDAXHistoricRates } = require('./gdax/gdax.js');
 
 const app = express();
 
@@ -30,15 +30,15 @@ app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-app.post('/gdx', (req, res) => {
+app.post('/gdax', (req, res) => {
   const input = req.body;
-  return getGDXHistoricRates(input.productId, input.start, input.end, input.granularity)
+  return getGDAXHistoricRates(input.productId, input.start, input.end, input.granularity)
   .then((data) => {
-    console.log('/gdx response: ', data);
+    console.log('/gdax response: ', data);
     res.send(data);
   })
   .catch((err) => {
-    console.log('/gdx error: ', err);
+    console.log('/gdax error: ', err);
     res.send(err);
   });
 });

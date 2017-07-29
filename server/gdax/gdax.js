@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const getGDXHistoricRates = (productId, start, end, granularity) => {
+const getGDAXHistoricRates = (productId, start, end, granularity) => {
   productId = productId || 'BTC-USD';
   start = start || '2017-07-21T17:00:00-07:00';
   end = end || '2017-07-28T17:00:00-07:00';
@@ -21,9 +21,9 @@ const getGDXHistoricRates = (productId, start, end, granularity) => {
     return { data: filterData, error: null };
   })
   .catch((err) => {
-    console.log('getGDXHistoricRates error');
+    console.log('getGDAXHistoricRates error');
     return { data: null, error: err };
   });
 };
 
-module.exports.getGDXHistoricRates = getGDXHistoricRates;
+module.exports.getGDAXHistoricRates = getGDAXHistoricRates;
