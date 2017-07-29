@@ -2,7 +2,7 @@
   "knex": {
     "client": "postgresql",
     "connection": {
-      "database": "CoinAlpha",
+      "database": "coinalpha",
       "user": "postgres",
       "password": "",
       "host": "localhost",
