@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import Header from './Header';
 import { sampleAction } from '../actions';
 import Satori from './Satori';
+import Portfolio from './Portfolio.js'
 // import './css/App.css';
 
 class Landing extends Component {
@@ -34,6 +35,7 @@ class Landing extends Component {
         <h2>Hello, world!</h2>
         <Header />
         <Satori />
+				<Portfolio />
       </div>
     );
   }
