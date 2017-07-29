@@ -41,6 +41,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "bookshelf": "^0.10.4",
     "config": "^1.26.1",
