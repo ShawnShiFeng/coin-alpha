@@ -1,5 +1,4 @@
 import React from 'react';
-import PortfolioSubscription from './Portfolio-Subscription';
 
 const Portfolio = () => (
   <div>

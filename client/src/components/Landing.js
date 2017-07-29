@@ -34,8 +34,8 @@ class Landing extends Component {
     return (
       <div>
         <Satori />
-        <Portfolio />
         <Dashboard />
+        <Portfolio />
       </div>
     );
   }
