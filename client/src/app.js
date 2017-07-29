@@ -10,7 +10,7 @@ import { createLogger } from 'redux-logger';
 import reducers from './reducers';
 
 // End Redux
-import App from './components/App';
+import Landing from './components/Landing';
 
 const middleware = [thunk, createLogger()];
 // createLogger can be turned off for product
@@ -29,8 +29,16 @@ const enhancer = composeEnhancers(
 
 const store = createStore(reducers, enhancer);
 
+const element = () => {
+  if (document.getElementById('landing')) return (<Landing />);
+  // else if (document.getElementById('dashboard')) return (<Dashboard />);
+  // else if (document.getElementById('login')) return (<Login />);
+  // else if (document.getElementById('signup')) return (<SignUp />);
+};
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    {element()}
   </Provider>,
-  document.getElementById('app'));
+  document.getElementById('landing')
+);

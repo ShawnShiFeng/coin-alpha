@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { sampleAction } from '../actions';
-// import Satori from './Satori';
+import Satori from './Satori';
 // import './css/App.css';
 
-class App extends Component {
+class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <h2>Hello, world!</h2>
-        {/* <Satori /> */}
+        <Satori />
       </div>
     );
   }
@@ -54,4 +54,4 @@ const matchDispatchToProps = (dispatch) => {
 //   sampleAction: PropTypes.func.isRequired,
 // };
 
-export default connect(mapStateToProps, matchDispatchToProps)(App);
+export default connect(mapStateToProps, matchDispatchToProps)(Landing);
