@@ -33,7 +33,6 @@ const Portfolio = () => (
       <table>
         <tr>
           <td>Tokens</td>
-          <td>Tokens</td>
           <td>Purchase NAV</td>
           <td>Initial Investment</td>
           <td>Current NAV</td>

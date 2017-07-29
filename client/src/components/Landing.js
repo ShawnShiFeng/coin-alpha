@@ -8,7 +8,8 @@ import Dashboard from './Dashboard';
 
 import { sampleAction } from '../actions';
 import Satori from './Satori';
-import Portfolio from './Portfolio.js'
+import Portfolio from './Portfolio';
+import Funds from './Funds';
 // import './css/App.css';
 
 class Landing extends Component {
@@ -35,7 +36,7 @@ class Landing extends Component {
       <div>
         <Satori />
         <Dashboard />
-        <Portfolio />
+        <Funds />
       </div>
     );
   }

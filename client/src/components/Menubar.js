@@ -3,9 +3,9 @@ import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-import ContentCopy from 'material-ui/svg-icons/content/content-copy';
-import Download from 'material-ui/svg-icons/file/file-download';
-import Delete from 'material-ui/svg-icons/action/delete';
+import Portfolio from 'material-ui/svg-icons/action/account-balance';
+import Actions from 'material-ui/svg-icons/action/account-box';
+import Funds from 'material-ui/svg-icons/action/assessment';
 
 const style = {
   paper: {
@@ -25,9 +25,9 @@ const Menubar = () => (
       <Menu>
         <MenuItem primaryText="Welcome XXXXXX" />
         <Divider />
-        <MenuItem primaryText="Portfolio" leftIcon={<ContentCopy />} />
-        <MenuItem primaryText="Actions" leftIcon={<Download />} />
-        <MenuItem primaryText="Funds" leftIcon={<Delete />} />
+        <MenuItem primaryText="Portfolio" leftIcon={<Portfolio />} />
+        <MenuItem primaryText="Actions" leftIcon={<Actions />} />
+        <MenuItem primaryText="Funds" leftIcon={<Funds />} />
       </Menu>
     </Paper>
   </div>
