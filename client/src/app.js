@@ -6,14 +6,15 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-
-import reducers from './reducers';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // End Redux
+import reducers from './reducers';
 import Landing from './components/Landing';
 
-const middleware = [thunk, createLogger()];
 // createLogger can be turned off for product
+const middleware = [thunk, createLogger()];
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
@@ -36,9 +37,12 @@ const element = () => {
   // else if (document.getElementById('signup')) return (<SignUp />);
 };
 
+injectTapEventPlugin();
 ReactDOM.render(
-  <Provider store={store}>
-    {element()}
-  </Provider>,
+  <MuiThemeProvider>
+    <Provider store={store}>
+      {element()}
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('landing')
 );
