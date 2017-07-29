@@ -32,7 +32,6 @@ class Landing extends Component {
 
     return (
       <div>
-        <h2>Hello, world!</h2>
         <Satori />
         <Dashboard />
       </div>
