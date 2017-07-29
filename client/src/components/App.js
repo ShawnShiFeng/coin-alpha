@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+// components
+import Header from './Header';
 import { sampleAction } from '../actions';
 import './css/App.css';
 
@@ -29,6 +31,7 @@ class App extends Component {
     return (
       <div>
         <h2>Hello, world!</h2>
+        <Header />
       </div>
     );
   }
