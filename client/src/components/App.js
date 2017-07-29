@@ -40,3 +40,8 @@ function mapStateToProps(state) {
     sample,
   };
 }
+
+const matchDispatchToProps = dispatch =>
+  bindActionCreators({
+    sampleAction,
+  }, dispatch);
