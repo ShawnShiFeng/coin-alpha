@@ -2,9 +2,9 @@ import React from 'react';
 
 const PortfolioSubscription = props => (
   <div>
-		<div>
-			<p>subscription</p>
-			<table>
+    <div>
+      <p>subscription</p>
+      <table>
 				<thead>
 					<tr>
 						<th>Fund Name</th>
