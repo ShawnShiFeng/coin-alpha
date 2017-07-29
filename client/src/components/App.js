@@ -46,9 +46,9 @@ const matchDispatchToProps = dispatch =>
     sampleAction,
   }, dispatch);
 
-App.propTypes = {
-  sample: PropTypes.object.isRequired,
-  sampleAction: PropTypes.func.isRequired,
-};
+// App.propTypes = {
+//   sample: PropTypes.object.isRequired,
+//   sampleAction: PropTypes.func.isRequired,
+// };
 
 export default connect(mapStateToProps, matchDispatchToProps)(App);
