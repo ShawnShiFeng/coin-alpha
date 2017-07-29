@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// components
-import Header from './Header';
+// Component
+import Dashboard from './Dashboard';
+
 import { sampleAction } from '../actions';
 import Satori from './Satori';
 import Portfolio from './Portfolio.js'
@@ -32,10 +33,9 @@ class Landing extends Component {
 
     return (
       <div>
-        <h2>Hello, world!</h2>
-        <Header />
         <Satori />
         <Portfolio />
+        <Dashboard />
       </div>
     );
   }
