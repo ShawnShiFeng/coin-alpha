@@ -22,11 +22,11 @@ class Header extends Component {
       <Toolbar>
         <ToolbarGroup>
           <span style={{ marginRight: 8}}>
-            <img src="123.png" alt='favicon' width={35} />
+            <img src={'/assets/coinAlpha.png'} alt={''} width={35} />
           </span>
-          <ToolbarTitle text="BlockChange" />
+          <ToolbarTitle text="Coin Alpha" />
         </ToolbarGroup>
-        <ToolbarGroup>
+        {/*<ToolbarGroup>
           <ToolbarSeparator />
           {renderif(this.props.loggedin === false) (
             <div><span>testing text1</span></div>
@@ -37,9 +37,9 @@ class Header extends Component {
           {renderif(this.props.loggedin === true) (
             <div><span>testing text3</span></div>
           )}
-        </ToolbarGroup>
+        </ToolbarGroup>*/}
       </Toolbar>
-    )
+    );
   }
 }
 
