@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 // const knex = require('knex')(require('../knexfile'));
+
 const { getGDAXHistoricRates } = require('./gdax/gdax.js');
 
 const app = express();
