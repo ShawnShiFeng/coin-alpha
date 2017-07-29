@@ -1,18 +1,10 @@
 import React from 'react';
+import PortfolioSubscription from './Portfolio-Subscription.js'
 
 const Portfolio = props => (
   <div>
 		<div>
-			<p>subscription</p>
-			<table>
-				<tr>
-					<td>Fund Name</td>
-					<td>Order Size</td>
-					<td>Allocation</td>
-					<td>Status</td>
-					<td>Actions</td>
-				</tr>
-			</table>
+			<PortfolioSubscription />
 		</div>
 		<div>
 			<p>holding details</p>
