@@ -17,13 +17,12 @@ class Satori extends Component {
     const client = new RTM(endpoint, appKey);
 
     client.on('enter-connected', () => {
-      // console.log('Connected to Satori RTM!');
+      console.log('Connected to Satori RTM!');
     });
 
     const subscription = client.subscribe(channel, RTM.SubscriptionMode.SIMPLE);
 
     subscription.on('rtm/subscription/data', (pdu) => {
-      // console.log(pdu.body.messages[0].price);
       this.setState({ data: pdu.body.messages[0].price });
     });
 
