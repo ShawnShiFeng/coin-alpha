@@ -35,7 +35,7 @@ class Landing extends Component {
         <h2>Hello, world!</h2>
         <Header />
         <Satori />
-				<Portfolio />
+        <Portfolio />
       </div>
     );
   }
