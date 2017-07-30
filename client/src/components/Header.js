@@ -12,6 +12,7 @@ class Header extends Component {
     const styles = {
       toolbar: {
         backgroundColor: '#333f51',
+        width: '100vw',
       },
     };
 

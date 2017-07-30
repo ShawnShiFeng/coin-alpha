@@ -18,43 +18,42 @@ class Portfolio extends Component {
   render() {
     return (
       <div>
-        <div>
-          <table>
-            {
-              this.props.funds.map((item) => {
-                this.test();
-                if (item) {
-                  if (item.transferred === false) {
-                    return (
-                      <div className="subscription-box">
-                        <tr>
-                          <td className="item-spacing subscription-text outstanding-subscription">
-                            Outstanding Subscription: </td>
-                          <td className="item-spacing subscription-text text-box">
-                            {item.fundName}</td>
-                          <td className="item-spacing subscription-text text-box">
-                            {item.allocation}</td>
-                          <td><button>Transfer</button></td>
-                        </tr>
-                      </div>
-                    );
-                  }
+        <table>
+          {
+            this.props.funds.map((item) => {
+              this.test();
+              if (item) {
+                if (item.transferred === false) {
+                  return (
+                    <div className="subscription-box">
+                      <tr>
+                        <td className="item-spacing subscription-text outstanding-subscription">
+                          Outstanding Subscription: </td>
+                        <td className="item-spacing subscription-text text-box">
+                          {item.fundName}</td>
+                        <td className="item-spacing subscription-text text-box">
+                          {item.allocation}</td>
+                        <td><button>Transfer</button></td>
+                      </tr>
+                    </div>
+                  );
                 }
-              })
-            }
-          </table>
-        </div>
-        <div>
-          <table>
+              }
+            })
+          }
+        </table>
+        <br />
+        <table>
+          <div className="holding-container">
             <tr>
-              <td>Fund Name</td>
-              <td>Tokens</td>
-              <td>Purchase NAV</td>
-              <td>Initial Investment</td>
-              <td>Current NAV</td>
-              <td>Current Market Value</td>
-              <td>Total Gain $</td>
-              <td>Total Gain %</td>
+              <td className="holding-title-text holding-title-text-spacing outstanding-subscription">Fund Name</td>
+              <td className="holding-title-text holding-title-text-spacing">Tokens</td>
+              <td className="holding-title-text holding-title-text-spacing">Purchase NAV</td>
+              <td className="holding-title-text holding-title-text-spacing">Initial Investment</td>
+              <td className="holding-title-text holding-title-text-spacing">Current NAV</td>
+              <td className="holding-title-text holding-title-text-spacing">Current Market Value</td>
+              <td className="holding-title-text holding-title-text-spacing">Total Gain $</td>
+              <td className="holding-title-text holding-title-text-spacing">Total Gain %</td>
             </tr>
             {
               this.props.funds.map((item) => {
@@ -62,7 +61,7 @@ class Portfolio extends Component {
                   if (item.transferred === true) {
                     return (
                       <tr>
-                        <td>{item.fundName}</td>
+                        <td className="outstanding-subscription">{item.fundName}</td>
                         <td>{item.token}</td>
                         <td>{item.purchaseNAV}</td>
                         <td>{item.token * item.purchaseNAV}</td>
@@ -71,15 +70,15 @@ class Portfolio extends Component {
                         <td>{(item.token * item.currentNAV) - (item.token * item.purchaseNAV)}</td>
                         <td>{(((item.token * item.currentNAV) - (item.token * item.purchaseNAV))
                           / ((item.token * item.purchaseNAV) / 100))}%</td>
+                        <td><button className="button"type="button">Redeem</button></td>
                       </tr>
                     );
                   }
                 }
               })
             }
-          </table>
-          <button type="button">Redeem</button>
-        </div>
+          </div>
+        </table>
       </div>
     );
   }

@@ -1,11 +1,16 @@
+.container-port {
+  background-color: red;
+}
+
 .item-spacing {
   padding-right: 6vh;
 }
 
 .subscription-text {
-  font-size: 3.5vh;
+  font-size: 2.5vh;
+  font-family: sans-serif;
 }
-
+/*'Lato', sans-serif*/
 .outstanding-subscription {
   padding-left: 6vh;
 }
@@ -14,8 +19,38 @@
   width: 20vh;
 }
 .subscription-box {
+  width: 76vw;
   border: solid;
-  border-bottom-width: 1px;
+  border-width: 1px;
   border-radius: 5px;
-  margin:  1.5vh;
+  margin:  1vh;
+}
+
+.holding-container {
+  background-color: lightgrey;
+  width: 76vw;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 1vh;
+}
+
+.holding-title-text {
+  font-size: 2vh;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.holding-title-text-spacing {
+  padding-right: 1vh;
+  padding-bottom: 1vh;
+}
+
+.button {
+  background-color: #333f51;
+  color: white;
+}
+
+.item-one {
+  /*margin: 1px auto;*/
 }

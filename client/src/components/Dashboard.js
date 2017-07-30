@@ -9,6 +9,8 @@ import Header from './Header';
 import Menubar from './Menubar';
 import TabBox from './TabBox';
 
+import './css/Dashboard.css';
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -60,8 +62,10 @@ class Dashboard extends Component {
     return (
       <div>
         <Header />
-        <Menubar />
-        <TabBox />
+        <div className="container">
+          <Menubar />
+          <TabBox />
+        </div>
       </div>
     );
   }
