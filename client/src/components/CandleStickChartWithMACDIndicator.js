@@ -41,8 +41,7 @@ const macdAppearance = {
 
 class CandleStickChartWithMACDIndicator extends React.Component {
   render() {
-    const { /* type, */ data: initialData, width, ratio } = this.props;
-    const type = 'svg';
+    const { type, data: initialData, width, ratio } = this.props;
     const ema26 = ema()
       .id(0)
       .options({ windowSize: 26 })
@@ -90,7 +89,7 @@ class CandleStickChartWithMACDIndicator extends React.Component {
         ratio={ratio}
         margin={{ left: 70, right: 70, top: 20, bottom: 30 }}
         type={type}
-        seriesName="MSFT"
+        seriesName="BTC"
         data={data}
         xScale={xScale}
         xAccessor={xAccessor}
