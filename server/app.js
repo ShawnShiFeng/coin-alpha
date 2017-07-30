@@ -22,8 +22,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', req.params);
 });
+
 
 app.get('/login', (req, res) => {
   res.render('login');

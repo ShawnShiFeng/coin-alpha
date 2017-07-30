@@ -78,7 +78,7 @@ class Menubar extends Component {
 
   render() {
     // console.log('***********************', this.props);
-    const greeting = 'Welcome, ' + this.props.user.first_name;
+    const greeting = 'Welcome, ' + this.props.firstName;
 
     return (
       <div>

@@ -26,7 +26,7 @@ class Login extends Component {
     axios.post('/login', this.state)
     .then((res) => {
       this.props.updateUser(res.data);
-      axios.get('./dashboard');
+      window.location = '/dashboard/' + res.data.first_name;
     })
     .catch((e) => {
       console.log(e);

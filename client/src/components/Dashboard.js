@@ -15,71 +15,14 @@ import './css/Dashboard.css';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      firstName: ['Shawn', 'Ryan', 'Yvonne', 'Carlo', 'Karel'][Math.round(Math.random() * 4)],
+    };
   }
 
   componentDidMount() {
-
-    // const data = [
-    //   {
-    //     fundName: 'Falcon',
-    //     orderSize: 5000,
-    //     allocation: 1000,
-    //     transferred: false,
-    //     token: 0,
-    //     purchaseNAV: 0,
-    //     currentNAV: 0,
-    //   },
-    //   {
-    //     fundName: 'CryptoCurrency Index',
-    //     orderSize: 5000,
-    //     allocation: 1000,
-    //     transferred: false,
-    //     token: 0,
-    //     purchaseNAV: 0,
-    //     currentNAV: 0,
-    //   },
-    //   {
-    //     fundName: 'ICO Fund',
-    //     orderSize: 5000,
-    //     allocation: 2500,
-    //     transferred: true,
-    //     token: 70,
-    //     purchaseNAV: 1000,
-    //     currentNAV: 1100,
-    //   },
-    //         {
-    //     fundName: 'falcon',
-    //     orderSize: 70000,
-    //     allocation: 0,
-    //     transferred: true,
-    //     token: 70,
-    //     purchaseNAV: 1000,
-    //     currentNAV: 1100,
-    //   },
-    //         {
-    //     fundName: 'falcon',
-    //     orderSize: 70000,
-    //     allocation: 0,
-    //     transferred: true,
-    //     token: 70,
-    //     purchaseNAV: 1000,
-    //     currentNAV: 1100,
-    //   },
-    //         {
-    //     fundName: 'falcon',
-    //     orderSize: 70000,
-    //     allocation: 0,
-    //     transferred: true,
-    //     token: 70,
-    //     purchaseNAV: 1000,
-    //     currentNAV: 1100,
-    //   },
-    // ];
-    // this.props.updateFunds(data);
     axios.get('/fundlist')
     .then((response) => {
-      // update user funds array
-      console.log(response.data);
       this.props.updateFunds(response.data);
     })
     .catch((err) => {
@@ -92,10 +35,10 @@ class Dashboard extends Component {
       <div>
         <Header />
         <div className="bot">
-          <MessageBox />
+          <MessageBox firstName={this.state.firstName}/>
         </div>
         <div className="container">
-          <Menubar />
+          <Menubar firstName={this.state.firstName}/>
           <TabBox />
         </div>
       </div>
@@ -104,7 +47,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(")000000000000000000", state.user);
   return {
     user: state.user,
     sample: state.sample,
