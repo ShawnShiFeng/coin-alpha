@@ -30,7 +30,13 @@ class Satori extends Component {
   }
 
   render() {
-    return (<div>{this.state.data}</div>);
+    return (
+      <div className="satori-container">
+        <div className="satori-box">
+          {this.state.data}
+        </div>
+      </div>
+    );
   }
 }
 

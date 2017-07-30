@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import renderif from 'render-if';
 
-
 import {
   Toolbar,
   ToolbarGroup,
@@ -22,7 +21,7 @@ class Header extends Component {
       <Toolbar>
         <ToolbarGroup>
           <span style={{ marginRight: 8}}>
-            <img src={'/assets/coinAlpha.png'} alt={''} width={35} />
+            <img src={'assets/coinAlpha.png'} alt={''} width={35} />
           </span>
           <ToolbarTitle text="Coin Alpha" />
         </ToolbarGroup>
@@ -32,4 +31,3 @@ class Header extends Component {
 }
 
 export default Header;
-

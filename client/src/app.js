@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // End Redux
@@ -45,9 +46,13 @@ const element = () => {
   // else if (document.getElementById('signup')) return (<SignUp />);
 };
 
+const muiTheme = getMuiTheme({
+  fontFamily: "'Lato', sans-serif",
+});
+
 injectTapEventPlugin();
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
       {element()}
     </Provider>

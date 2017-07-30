@@ -22,7 +22,8 @@ class Login extends Component {
 
   handleSubmit() {
     axios.post('/login', this.state)
-    .then(() => {
+    .then((user) => {
+      console.log('logged in');
       // save login info to store
     })
     .catch((e) => {
@@ -32,8 +33,18 @@ class Login extends Component {
   }
 
   render() {
+    const styles = {
+      container: {
+        backgroundColor: 'rgba(51, 63, 81, 0.7)',
+      },
+      text: {
+        color: '#fff',
+      },
+    };
+
     return (
-      <Card>
+      <Card className="login-container" style={styles.container} textStyle={styles.text}>
+        <div>Login</div>
         <TextField
           name="email"
           floatingLabelText="Email"
