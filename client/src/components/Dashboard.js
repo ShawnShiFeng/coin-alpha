@@ -73,6 +73,7 @@ const mapStateToProps = (state) => {
     showPortfolio: state.showPortfolio,
     showActions: state.showActions,
     showFunds: state.showFunds,
+    showMarket: state.showMarket,
   };
 };
 

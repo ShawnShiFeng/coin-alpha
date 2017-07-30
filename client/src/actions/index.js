@@ -28,6 +28,13 @@ export const openFunds = () => {
   };
 };
 
+export const openMarket = () => {
+  return {
+    type: 'OPEN_MARKET',
+    showMarket: true,
+  };
+};
+
 export const closePortfolio = () => {
   return {
     type: 'CLOSE_PORTFOLIO',
@@ -49,13 +56,18 @@ export const closeFunds = () => {
   };
 };
 
+<<<<<<< HEAD
 // user actions
+=======
+<<<<<<< HEAD
+>>>>>>> Working on Redux for Market Chart
 export const updateUser = (user) => {
   return {
     type: 'CLOSE_FUNDS',
     user,
   };
 };
+<<<<<<< HEAD
 
 // funds actions
 export const updateFunds = (userFunds) => {
@@ -64,3 +76,20 @@ export const updateFunds = (userFunds) => {
     funds: userFunds,
   };
 };
+=======
+=======
+export const closeMarket = () => {
+  return {
+    type: 'CLOSE_MARKET',
+    showMarket: false,
+  };
+};
+
+export const updateChart = (chartData) => {
+  return {
+    type: 'UPDATE_CHART',
+    chartData,
+  };
+};
+>>>>>>> Working on Redux for Market Chart
+>>>>>>> Working on Redux for Market Chart

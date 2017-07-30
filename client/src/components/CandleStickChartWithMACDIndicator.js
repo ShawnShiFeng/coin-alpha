@@ -41,7 +41,8 @@ const macdAppearance = {
 
 class CandleStickChartWithMACDIndicator extends React.Component {
   render() {
-    const { type, data: initialData, width, ratio } = this.props;
+    const { /* type, */ data: initialData, width, ratio } = this.props;
+    const type = 'svg';
     const ema26 = ema()
       .id(0)
       .options({ windowSize: 26 })

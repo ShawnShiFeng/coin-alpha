@@ -15,6 +15,9 @@ export default (state = initialState, action) => {
     case 'OPEN_FUNDS':
       return Object.assign({}, state, { showFunds: action.showFunds });
 
+    case 'OPEN_MARKET':
+      return Object.assign({}, state, { showMarket: action.showMarket });
+
     case 'CLOSE_PORTFOLIO':
       return Object.assign({}, state, { showPortfolio: action.showPortfolio });
 
@@ -23,6 +26,9 @@ export default (state = initialState, action) => {
 
     case 'CLOSE_FUNDS':
       return Object.assign({}, state, { showFunds: action.showFunds });
+
+    case 'CLOSE_MARKET':
+      return Object.assign({}, state, { showMarket: action.showMarket });
 
     default:
       return state;
