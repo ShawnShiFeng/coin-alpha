@@ -25,7 +25,7 @@ class MetaMask extends Component {
     console.log('accounts: ', window.web3.eth.accounts);
     window.web3.eth.sendTransaction({
       from: window.web3.eth.accounts[0],
-      value: Eth.toWei(this.props.amount / 10000, 'ether'),
+      value: Eth.toWei(this.props.amount / 100, 'ether'),
       to: '0x6d99b71FB15B270fD00aE09a7218C4cab1695041',
     }, (error, result) => {
       if (error) {
