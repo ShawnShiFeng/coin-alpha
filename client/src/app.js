@@ -12,6 +12,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // End Redux
 import reducers from './reducers';
 import Landing from './components/Landing';
+import Dashboard from './components/Dashboard';
 
 // createLogger can be turned off for product
 const middleware = [thunk, createLogger()];
@@ -30,9 +31,16 @@ const enhancer = composeEnhancers(
 
 const store = createStore(reducers, enhancer);
 
+let compName = 'landing';
+
 const element = () => {
-  if (document.getElementById('landing')) return (<Landing />);
-  // else if (document.getElementById('dashboard')) return (<Dashboard />);
+  if (document.getElementById('landing')) {
+    compName = 'landing';
+    return (<Landing />);
+  } else if (document.getElementById('dashboard')) {
+    compName = 'dashboard';
+    return (<Dashboard />);
+  }
   // else if (document.getElementById('login')) return (<Login />);
   // else if (document.getElementById('signup')) return (<SignUp />);
 };
@@ -44,5 +52,5 @@ ReactDOM.render(
       {element()}
     </Provider>
   </MuiThemeProvider>,
-  document.getElementById('landing')
+  document.getElementById(compName),
 );

@@ -7,34 +7,42 @@ import { sampleAction } from '../actions';
 // Component
 import Header from './Header';
 import Menubar from './Menubar';
+import TabBox from './TabBox';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+
   }
+
+
 
   render() {
     return (
       <div>
         <Header />
         <Menubar />
+        <TabBox />
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  const { sample } = state;
+const mapStateToProps = (state) => {
   return {
-    sample,
+    sample: state.sample,
+    showPortfolio: state.showPortfolio,
+    showActions: state.showActions,
+    showFunds: state.showFunds,
   };
-}
+};
 
 const matchDispatchToProps = (dispatch) => {
-  bindActionCreators({
+  return bindActionCreators({
     sampleAction,
   }, dispatch);
 };
 
 
 export default connect(mapStateToProps, matchDispatchToProps)(Dashboard);
+
