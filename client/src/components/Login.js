@@ -59,6 +59,7 @@ class Login extends Component {
         />
         <br />
         <RaisedButton label="login" onTouchTap={this.handleSubmit} />
+        <a href="/signup">Create Account</a>
       </Card>
     );
   }
