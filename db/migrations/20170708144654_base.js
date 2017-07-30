@@ -14,6 +14,7 @@ exports.up = (knex, Promise) => Promise.all([
   knex.schema.createTableIfNotExists('funds', (table) => {
     table.increments('id').unsigned().primary();
     table.string('name').notNullable();
+    table.string('description');
     table.string('btc_address').nullable();
     table.string('eth_address').nullable();
     table.string('ltc_address').nullable();
