@@ -24,6 +24,7 @@ class Login extends Component {
     axios.post('/login', this.state)
     .then((user) => {
       console.log('logged in');
+      window.location += 'dashboard';
       // save login info to store
     })
     .catch((e) => {
@@ -35,7 +36,7 @@ class Login extends Component {
   render() {
     const styles = {
       container: {
-        backgroundColor: 'rgba(51, 63, 81, 0.7)',
+        backgroundColor: 'rgba(51, 63, 81, 0.6)',
       },
       text: {
         color: '#fff',
@@ -44,7 +45,7 @@ class Login extends Component {
 
     return (
       <Card className="login-container" style={styles.container} textStyle={styles.text}>
-        <div>Login</div>
+        <h2>Login</h2>
         <TextField
           name="email"
           floatingLabelText="Email"

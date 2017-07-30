@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CompressionPlugin from 'compression-webpack-plugin';
+// import CompressionPlugin from 'compression-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 const config = {
@@ -33,35 +33,35 @@ const config = {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './client/src/index.html'),
     }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new CompressionPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
-    new CleanWebpackPlugin(['dist', 'build'], {
-      root: path.join(__dirname, 'public'),
-      verbose: true,
-      dry: false,
-    }),
+    // new webpack.optimize.UglifyJsPlugin(),
+    // new webpack.optimize.AggressiveMergingPlugin(),
+    // new CompressionPlugin({
+    //   asset: '[path].gz[query]',
+    //   algorithm: 'gzip',
+    //   test: /\.js$|\.css$|\.html$/,
+    //   threshold: 10240,
+    //   minRatio: 0.8,
+    // }),
+    // new CleanWebpackPlugin(['dist', 'build'], {
+    //   root: path.join(__dirname, 'public'),
+    //   verbose: true,
+    //   dry: false,
+    // }),
   ],
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    port: 1337,
-    overlay: {
-      warnings: true,
-      errors: true,
-    },
-    hot: true,
-  },
+  // devtool: 'inline-source-map',
+  // devServer: {
+  //   contentBase: path.join(__dirname, 'public'),
+  //   port: 1337,
+  //   overlay: {
+  //     warnings: true,
+  //     errors: true,
+  //   },
+  //   hot: true,
+  // },
 };
 
 export default config;

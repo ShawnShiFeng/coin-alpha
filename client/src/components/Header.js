@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-
-import renderif from 'render-if';
-
+// import renderif from 'render-if';
 import {
   Toolbar,
   ToolbarGroup,
   ToolbarTitle,
-  ToolbarSeparator,
   FlatButton,
-  RaisedButton,
-  FontIcon } from 'material-ui';
+} from 'material-ui';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const styles = {
+      toolbar: {
+        backgroundColor: '#333f51',
+      },
+    };
+
     return (
-      <Toolbar>
+      <Toolbar style={styles.toolbar}>
         <ToolbarGroup>
-          <span style={{ marginRight: 8}}>
+          <span style={{ marginRight: 8 }}>
             <img src={'assets/coinAlpha.png'} alt={''} width={35} />
           </span>
-          <ToolbarTitle text="Coin Alpha" />
+          <ToolbarTitle text="CoinAlpha" />
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <a href="/live-update" > Market Data </a>
+          {/* {renderif(this.props.loggedin === true) (
+            <div><span>testing text3</span></div>
+          )} */}
         </ToolbarGroup>
       </Toolbar>
     );
