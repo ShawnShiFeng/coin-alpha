@@ -1,5 +1,8 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 a {
-  font-family: Lato, sans-serif;
   color: #6995c9;
   text-decoration: none;
 }
@@ -23,4 +26,75 @@ a.navigation-link {
 .fund {
   width: 50px;
   margin: 10px;
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  color: #6995c9;
+}
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+.bot {
+  position: fixed;
+  z-index: 99;
+  bottom: 5px;
+  right: 15px;
+}
+
+.message-box-container {
+  background-color: #6995c9;
+  border-radius: 5px;
+  width: 330px;
+  height: 380px;
+}
+
+.hidden-container {
+  background-color: #6995c9;
+  border-radius: 5px;
+  width: 330px;
+  height: 50px;
+}
+
+.message-box-title {
+  background-color: #333f51;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #6995c9;
+  text-align: center;
+  padding: 5px;
+}
+
+#message-box-body {
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  width: 310px;
+  height: 290px;
+  overflow: auto;
+}
+
+.message {
+  margin: 5px;
+}
+
+.my-message {
+  width: 270px;
+}
+
+.time {
+  text-align: center;
+}
+
+.message-box-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
 }
