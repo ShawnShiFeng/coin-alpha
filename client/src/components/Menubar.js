@@ -26,7 +26,7 @@ const style = {
   paper: {
     // display: 'inline-block',
     float: 'left',
-    margin: '16px 32px 16px 0',
+    // margin: '16px 32px 16px 0',
     height: '100vh',
   },
   rightIcon: {

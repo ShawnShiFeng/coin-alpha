@@ -18,7 +18,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div>
-        <table>
+        <table className="table-top-spacing">
           {
             this.props.funds.map((item) => {
               this.test();
