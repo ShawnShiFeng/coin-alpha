@@ -72,6 +72,13 @@ export const updateFunds = (userFunds) => {
   };
 };
 
+export const getKey = (key) => {
+  return {
+    type: 'GET_KEY',
+    key,
+  };
+};
+
 export const closeMarket = () => {
   return {
     type: 'CLOSE_MARKET',

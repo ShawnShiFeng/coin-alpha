@@ -5,6 +5,16 @@ import axios from 'axios';
 import { updateFunds } from '../actions';
 import './css/Portfolio.css';
 
+import {
+  Card,
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui';
+
 import Metamask from './Metamask';
 
 class Portfolio extends Component {
@@ -40,11 +50,130 @@ class Portfolio extends Component {
 
 
   render() {
+    const style = {
+      table: {
+        backgroundColor: 'darkgray',
+      },
+      text: {
+        color: 'white',
+      },
+      text2: {
+        color: 'black',
+      },
+      title: {
+        fontWeight: 'bold',
+        color: 'white',
+      },
+      title2: {
+        fontWeight: 'bold',
+        color: 'black',
+      },
+    };
     return (
       <div>
-        <table className="table-top-spacing">
+        <Card>
+          <Table multiSelectable style={style.table}>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn style={style.title}>Name</TableHeaderColumn>
+                <TableHeaderColumn style={style.title}>Allocation</TableHeaderColumn>
+                <TableHeaderColumn style={style.title}>Actions</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {
+            this.props.funds.map((item, index) => {
+              this.test();
+              if (item) {
+                if (item.transferred === false) {
+                  return (
+                    <TableRow>
+                      <TableRowColumn style={style.text}>{item.name}</TableRowColumn>
+                      <TableRowColumn style={style.text}>{item.allocation}</TableRowColumn>
+                      <TableRowColumn style={style.text}><Metamask
+                        index={index}
+                        amount={item.allocation}
+                      /></TableRowColumn>
+                    </TableRow>
+                  );
+                }
+              }
+            })
+            }
+            </TableBody>
+          </Table>
+        </Card>
+        <br />
+        <br />
+        <Card>
+          <Table multiSelectable>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn style={style.title2}>Name</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Token</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Purchase NAV</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Initial Investment</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Current NAV</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Current Market Value</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Total Gain $</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>Total Gain %</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {
+              this.props.funds.map((item, index) => {
+                if (item) {
+                  if (item.transferred === true) {
+                    return (
+                      <TableRow>
+                        <TableRowColumn>{item.name}</TableRowColumn>
+                        <TableRowColumn>{item.token}</TableRowColumn>
+                        <TableRowColumn>{item.token * item.purchaseNAV}</TableRowColumn>
+                        <TableRowColumn>{item.currentNAV}</TableRowColumn>
+                        <TableRowColumn>{item.token * item.currentNAV}</TableRowColumn>
+                        <TableRowColumn>{(item.token * item.currentNAV)
+                          - (item.token * item.purchaseNAV)}</TableRowColumn>
+                        <TableRowColumn>{(((item.token * item.currentNAV)
+                          - (item.token * item.purchaseNAV))
+                          / ((item.token * item.purchaseNAV) / 100))}%</TableRowColumn>
+                        <TableRowColumn><button
+                          onClick={() => this.removeItem(index)}
+                          className="button"
+                          type="button">Redeem</button></TableRowColumn>
+                      </TableRow>
+                    );
+                  }
+                }
+              })
+            }
+            </TableBody>
+          </Table>
+        </Card>
+      </div>
+    );
+  }
+
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    funds: state.funds.funds,
+  };
+};
+
+const matchDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    updateFunds,
+  }, dispatch);
+};
+
+
+export default connect(mapStateToProps, matchDispatchToProps)(Portfolio);
+
+        /*<table className="table-top-spacing">
           {
-            this.props.funds.map((item) => {
+            this.props.funds.map((item, index) => {
               this.test();
               if (item) {
                 if (item.transferred === false) {
@@ -54,10 +183,10 @@ class Portfolio extends Component {
                         <td className="item-spacing subscription-text outstanding-subscription">
                           Outstanding Subscription: </td>
                         <td className="item-spacing subscription-text text-box">
-                          {item.fundName}</td>
+                          {item.name}</td>
                         <td className="item-spacing subscription-text text-box">
                           {item.allocation}</td>
-                        <td><Metamask amount={item.allocation} /></td>
+                        <td><Metamask index={index} amount={item.allocation} /></td>
                       </tr>
                     </div>
                   );
@@ -85,7 +214,7 @@ class Portfolio extends Component {
                   if (item.transferred === true) {
                     return (
                       <tr>
-                        <td className="outstanding-subscription">{item.fundName}</td>
+                        <td className="outstanding-subscription">{item.name}</td>
                         <td>{item.token}</td>
                         <td>{item.purchaseNAV}</td>
                         <td>{item.token * item.purchaseNAV}</td>
@@ -94,7 +223,6 @@ class Portfolio extends Component {
                         <td>{(item.token * item.currentNAV) - (item.token * item.purchaseNAV)}</td>
                         <td>{(((item.token * item.currentNAV) - (item.token * item.purchaseNAV))
                           / ((item.token * item.purchaseNAV) / 100))}%</td>
-                        {/*<td><button onClick={this.sendMail} className="button"type="button">Redeem</button></td>*/}
                         <td><button onClick={() => this.removeItem(index)} className="button"type="button">Redeem</button></td>
                       </tr>
                     );
@@ -103,25 +231,4 @@ class Portfolio extends Component {
               })
             }
           </div>
-        </table>
-      </div>
-    );
-  }
-
-}
-
-
-const mapStateToProps = (state) => {
-  return {
-    funds: state.funds.funds,
-  };
-};
-
-const matchDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    updateFunds,
-  }, dispatch);
-};
-
-
-export default connect(mapStateToProps, matchDispatchToProps)(Portfolio);
+        </table>*/
