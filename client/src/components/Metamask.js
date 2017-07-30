@@ -24,14 +24,14 @@ class MetaMask extends Component {
     console.log('accounts: ', window.web3.eth.accounts);
     window.web3.eth.sendTransaction({
       from: window.web3.eth.accounts[0],
-      value: Eth.toWei('100', 'ether'),
+      value: Eth.toWei(this.props.amount, 'ether'),
       to: '0x6d99b71FB15B270fD00aE09a7218C4cab1695041',
       data: null,
     }, (error, result) => {
       if (error) {
         console.warn(error);
       } else {
-        console.log(result);
+        console.log('SUCCESSFUL PAYMENT: ENTER ACTION HERE');
       }
     });
   }
@@ -53,7 +53,7 @@ class MetaMask extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleSubmit} >Test</button>
+        <button onClick={this.handleSubmit} >Transfer</button>
       </div>
     );
   }
