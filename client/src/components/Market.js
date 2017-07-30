@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
-import { Pie } from 'react-chartjs-2';
 
 import { TypeChooser } from 'react-stockcharts/lib/helper';
 import Paper from 'material-ui/Paper';
@@ -142,37 +141,8 @@ class Market extends Component {
     if (chartData.length === 0) {
       return <div>Loading...</div>;
     }
-    const pieData = {
-      labels: ['BTC', 'ETH', 'LTC', 'Ripple', 'Dash'],
-      datasets: [{
-        label: 'Scrooge McDuck Investment Fund',
-        data: [
-          0.25,
-          0.1,
-          0.15,
-          0.4,
-          0.1,
-        ],
-        backgroundColor: [
-          'rgba(252, 61, 57, 1)',
-          'rgba(254, 203, 46, 1)',
-          'rgba(83, 215, 105, 1)',
-          'rgba(20, 126, 251, 1)',
-          'rgba(193, 53, 132, 1)',
-        ],
-        borderColor: [
-          'rgba(252, 61, 57, 1)',
-          'rgba(254, 203, 46, 1)',
-          'rgba(83, 215, 105, 1)',
-          'rgba(20, 126, 251, 1)',
-          'rgba(193, 53, 132, 1)',
-        ],
-        borderWidth: 3,
-      }],
-    };
     return (
       <div>
-        <Pie data={pieData} width={500} />
         <table style={style.table}>
           <tr>
             <td>
