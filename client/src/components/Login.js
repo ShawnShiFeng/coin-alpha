@@ -23,9 +23,8 @@ class Login extends Component {
   handleSubmit() {
     axios.post('/login', this.state)
     .then((user) => {
-      console.log('logged in');
+      this.props.updateUser(user);
       window.location += 'dashboard';
-      // save login info to store
     })
     .catch((e) => {
       console.log(e);

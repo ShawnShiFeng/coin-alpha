@@ -6,10 +6,7 @@ import { bindActionCreators } from 'redux';
 // Components
 import Header from './Header';
 import Login from './Login';
-import { sampleAction } from '../actions';
-import Satori from './Satori';
-import Portfolio from './Portfolio';
-import Funds from './Funds';
+import { updateUser } from '../actions';
 
 class Landing extends Component {
   constructor(props) {
@@ -33,7 +30,7 @@ class Landing extends Component {
       <div>
         <Header />
         <div className="below-header">
-          <Login />
+          <Login {...this.props} />
         </div>
       </div>
     );
@@ -49,7 +46,7 @@ function mapStateToProps(state) {
 
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    sampleAction,
+    updateUser,
   }, dispatch);
 };
 
