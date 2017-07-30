@@ -16,8 +16,14 @@ exports.up = (knex, Promise) => Promise.all([
     table.string('name').notNullable();
     table.string('btc_address').nullable();
     table.string('eth_address').nullable();
-    table.string('itc_address').nullable();
+    table.string('ltc_address').nullable();
     table.string('usd_address').notNullable();
+    table.integer('order_size').nullable();
+    table.integer('allocation').nullable();
+    table.boolean('transferred').nullable();
+    table.integer('token').nullable();
+    table.integer('currentNAV').nullable();
+    table.integer('purchaseNAV').nullable();
     table.string('gdax_access_key').nullable();
     table.string('gdax_secret').nullable();
     table.string('gdax_passphrase').nullable();

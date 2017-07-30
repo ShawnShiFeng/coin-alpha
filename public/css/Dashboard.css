@@ -8,3 +8,8 @@ a.navigation-link {
   word-wrap: normal;
   display: inline-block;
 }
+
+.fund {
+  width: 50px;
+  margin: 10px;
+}
