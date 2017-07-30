@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import renderif from 'render-if';
-import { sampleAction, togglePortfolio, toggleActions, toggleFunds } from '../actions';
+import { sampleAction, togglePortfolio, toggleActions, toggleFunds, toggleMarket } from '../actions';
 
 // Component
 import Portfolio from './Portfolio';
 import Actions from './Actions';
 import Funds from './Funds';
+import Market from './Market';
 
 class TabBox extends Component {
   constructor(props) {
@@ -18,9 +19,6 @@ class TabBox extends Component {
   render() {
     return (
       <div>
-        <p>from tabbox</p>
-        <p>hello{this.props.showPortfolio}</p>
-
         {renderif(this.props.showPortfolio === true)(
           <Portfolio />,
         )}
@@ -30,28 +28,27 @@ class TabBox extends Component {
         {renderif(this.props.showFunds === true)(
           <Funds />,
         )}
+        {renderif(this.props.showMarket === true)(
+          <Market />,
+        )}
       </div>
     );
   }
 }
 
-
-
 const mapStateToProps = (state) => {
   return {
-    sample: state.sample,
+    sample: state.sample.sample,
     showPortfolio: state.tab.showPortfolio,
     showActions: state.tab.showActions,
     showFunds: state.tab.showFunds,
+    showMarket: state.tab.showMarket,
   };
 };
 
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
     sampleAction,
-    togglePortfolio,
-    toggleActions,
-    toggleFunds,
   }, dispatch);
 };
 

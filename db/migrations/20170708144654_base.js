@@ -2,6 +2,8 @@ exports.up = (knex, Promise) => Promise.all([
   knex.schema.createTableIfNotExists('investors', (table) => {
     table.increments('id').unsigned().primary();
     table.string('email', 100).notNullable().unique();
+    table.string('first_name').notNullable();
+    table.string('last_name').notNullable();
     table.string('password').notNullable();
     table.date('created_at').notNullable();
     table.date('updated_at').notNullable();

@@ -7,12 +7,15 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // End Redux
 import reducers from './reducers';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
+import SignUp from './components/SignUp';
+import Satori from './components/Satori';
 
 // createLogger can be turned off for product
 const middleware = [thunk, createLogger()];
@@ -40,14 +43,23 @@ const element = () => {
   } else if (document.getElementById('dashboard')) {
     compName = 'dashboard';
     return (<Dashboard />);
+  } else if (document.getElementById('signup')) {
+    compName = 'signup';
+    return (<SignUp />);
+  } else if (document.getElementById('satori')) {
+    compName = 'satori';
+    return (<Satori />);
   }
-  // else if (document.getElementById('login')) return (<Login />);
   // else if (document.getElementById('signup')) return (<SignUp />);
 };
 
+const muiTheme = getMuiTheme({
+  fontFamily: "'Lato', sans-serif",
+});
+
 injectTapEventPlugin();
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
       {element()}
     </Provider>

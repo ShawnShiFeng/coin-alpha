@@ -1,3 +1,4 @@
+// sample actions
 export const sampleAction = (props) => {
   return {
     type: 'SAMPLE_ACTION',
@@ -5,6 +6,7 @@ export const sampleAction = (props) => {
   };
 };
 
+// tap actions
 export const openPortfolio = () => {
   return {
     type: 'OPEN_PORTFOLIO',
@@ -26,6 +28,13 @@ export const openFunds = () => {
   };
 };
 
+export const openMarket = () => {
+  return {
+    type: 'OPEN_MARKET',
+    showMarket: true,
+  };
+};
+
 export const closePortfolio = () => {
   return {
     type: 'CLOSE_PORTFOLIO',
@@ -44,5 +53,35 @@ export const closeFunds = () => {
   return {
     type: 'CLOSE_FUNDS',
     showFunds: false,
+  };
+};
+
+// user actions
+export const updateUser = (user) => {
+  return {
+    type: 'CLOSE_FUNDS',
+    user,
+  };
+};
+
+// funds actions
+export const updateFunds = (userFunds) => {
+  return {
+    type: 'UPDATE_FUNDS',
+    funds: userFunds,
+  };
+};
+
+export const closeMarket = () => {
+  return {
+    type: 'CLOSE_MARKET',
+    showMarket: false,
+  };
+};
+
+export const updateChart = (chartData) => {
+  return {
+    type: 'UPDATE_CHART',
+    chartData,
   };
 };
