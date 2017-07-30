@@ -10,7 +10,7 @@ const sendTransaction = (amount, addr1, addr2) => web3.eth.sendTransaction({
   from: addr1,
   to: addr2,
   value: web3.toWei(amount, 'ether'),
-  gasLimit: 30000,
+  gasLimit: 21000,
   gasPrice: 2000000000,
 });
 
