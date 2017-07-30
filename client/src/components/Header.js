@@ -26,18 +26,6 @@ class Header extends Component {
           </span>
           <ToolbarTitle text="Coin Alpha" />
         </ToolbarGroup>
-        {/*<ToolbarGroup>
-          <ToolbarSeparator />
-          {renderif(this.props.loggedin === false) (
-            <div><span>testing text1</span></div>
-          )}
-          {renderif(this.props.loggedin === false) (
-            <div><span>testing text2</span></div>
-          )}
-          {renderif(this.props.loggedin === true) (
-            <div><span>testing text3</span></div>
-          )}
-        </ToolbarGroup>*/}
       </Toolbar>
     );
   }

@@ -36,10 +36,13 @@ class Landing extends Component {
     return (
       <div>
         <Satori />
+<<<<<<< HEAD
         <Dashboard />
         <Funds />
         <Portfolio />
         <Login />
+=======
+>>>>>>> add switch tab feature
       </div>
     );
   }
@@ -53,14 +56,9 @@ function mapStateToProps(state) {
 }
 
 const matchDispatchToProps = (dispatch) => {
-  bindActionCreators({
+  return bindActionCreators({
     sampleAction,
   }, dispatch);
 };
-
-// Landing.propTypes = {
-//   sample: PropTypes.object.isRequired,
-//   sampleAction: PropTypes.func.isRequired,
-// };
 
 export default connect(mapStateToProps, matchDispatchToProps)(Landing);
