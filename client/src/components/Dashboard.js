@@ -45,6 +45,33 @@ class Dashboard extends Component {
         purchaseNAV: 1000,
         currentNAV: 1100,
       },
+            {
+        fundName: 'falcon',
+        orderSize: 70000,
+        allocation: 0,
+        transferred: true,
+        token: 70,
+        purchaseNAV: 1000,
+        currentNAV: 1100,
+      },
+            {
+        fundName: 'falcon',
+        orderSize: 70000,
+        allocation: 0,
+        transferred: true,
+        token: 70,
+        purchaseNAV: 1000,
+        currentNAV: 1100,
+      },
+            {
+        fundName: 'falcon',
+        orderSize: 70000,
+        allocation: 0,
+        transferred: true,
+        token: 70,
+        purchaseNAV: 1000,
+        currentNAV: 1100,
+      },
     ];
     this.props.updateFunds(data);
     // axios.get('/getUserFunds')
