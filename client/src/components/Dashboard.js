@@ -9,7 +9,11 @@ import Header from './Header';
 import Menubar from './Menubar';
 import TabBox from './TabBox';
 
+<<<<<<< HEAD
 import './css/Dashboard.css';
+=======
+import MetaMask from './Metamask';
+>>>>>>> metamask working!
 
 class Dashboard extends Component {
   constructor(props) {
@@ -66,6 +70,7 @@ class Dashboard extends Component {
           <Menubar />
           <TabBox />
         </div>
+        <MetaMask />
       </div>
     );
   }
