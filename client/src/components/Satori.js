@@ -75,6 +75,10 @@ class Satori extends Component {
             Volume: {DASH.volume} <br />
           </div>
         </div>
+        <div className="credit-satori">
+          Powered by
+          <img src="assets/satori.png" width='70' height='70'/>
+        </div>
       </div>
     );
   }
