@@ -6,6 +6,7 @@ const path = require('path');
 const models = require('../db/models');
 
 const { getGDAXHistoricRates } = require('./gdax/gdax.js');
+const { sendMail } = require('./sparkpost/sparkpost.js');
 
 const app = express();
 
@@ -55,6 +56,11 @@ app.post('/gdax', (req, res) => {
     console.log('/gdax error: ', err);
     res.send(err);
   });
+});
+
+app.post('/sendmail', (req, res) => {
+  sendMail();
+  res.send();
 });
 
 app.post('/signup', (req, res) => {

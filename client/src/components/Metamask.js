@@ -6,6 +6,7 @@ import Eth from 'ethjs';
 import Web3 from 'web3';
 import { sampleAction, updateFunds } from '../actions';
 
+import './css/Portfolio.css';
 // const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 
 // Component
@@ -52,7 +53,7 @@ class MetaMask extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleSubmit} >Transfer</button>
+        <button className="transfer-button" onClick={this.handleSubmit} >Transfer</button>
       </div>
     );
   }

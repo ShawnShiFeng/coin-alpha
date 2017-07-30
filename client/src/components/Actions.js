@@ -1,7 +1,9 @@
 import React from 'react';
 
+import './css/Actions.css';
+
 const Actions = () => (
-  <div>
+  <div className="actions-container">
     <div>
       <p>Where Are You Based?</p>
       <select>
