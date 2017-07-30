@@ -149,6 +149,8 @@ class Portfolio extends Component {
             </TableBody>
           </Table>
         </Card>
+
+        <button onClick={this.sendMail} >test sparkpost</button>
       </div>
     );
   }
