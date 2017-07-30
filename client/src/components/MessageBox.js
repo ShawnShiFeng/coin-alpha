@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RTM from 'satori-rtm-sdk';
 import moment from 'moment';
+import axios from 'axios';
 
 const endpoint = 'wss://l07gw5h6.api.satori.com';
 const appKey = '228eB204AbdB08212eB5d5be15b53BB9';
@@ -51,6 +52,15 @@ class MessageBox extends Component {
         message: 'Got it, I will send this chat transcript to you by email.',
       });
       this.setState({ msgs: current });
+
+      // send chat transcipt
+      axios.post('/sendmail', { msgs: this.state.msgs })
+      .then(() => {
+        console.log('you have successfully sent mails!');
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     } else {
       const scrollBox = document.getElementById('message-box-body');
       scrollBox.scrollTop = scrollBox.scrollHeight;
