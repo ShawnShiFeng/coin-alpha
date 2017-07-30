@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 // Component
 import Dashboard from './Dashboard';
+import Login from './Login';
 
 import { sampleAction } from '../actions';
 import Satori from './Satori';
@@ -38,6 +39,7 @@ class Landing extends Component {
         <Dashboard />
         <Funds />
         <Portfolio />
+        <Login />
       </div>
     );
   }

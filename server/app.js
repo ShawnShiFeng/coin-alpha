@@ -3,6 +3,9 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 // const knex = require('knex')(require('../knexfile'));
+const models = require('../db/models');
+
+const { getGDAXHistoricRates } = require('./gdax/gdax.js');
 
 const app = express();
 
@@ -25,12 +28,54 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.post('/login', (req, res) => {
+  models.Investor.where({ email: req.body.email }).fetch()
+  .then((user) => {
+    res.status(201).send(user);
+  })
+  .catch(() => {
+    res.status(201).send({ error: 'user not found' });
+  });
+});
+
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+app.post('/gdax', (req, res) => {
+  const input = req.body;
+  return getGDAXHistoricRates(input.productId, input.start, input.end, input.granularity)
+  .then((data) => {
+    console.log('/gdax response: ', data);
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log('/gdax error: ', err);
+    res.send(err);
+  });
+});
+
+app.post('/signup', (req, res) => {
+  models.Investor.forge({
+    email: req.body.email,
+    password: req.body.password,
+    eth_wallet: req.body.ethWallet,
+    created_at: new Date(),
+    updated_at: new Date(),
+    type: 'Reg D',
+    status: true,
+  })
+  .save()
+  .then((user) => {
+    res.status(201).send(user);
+  })
+  .catch(() => {
+    res.status(201).send({ error: 'signup error' });
+  });
+});
+
 app.get('*.js', (req, res, next) => {
-  req.url = req.url + '.gz';
+  req.url += '.gz';
   res.set('Content-Encoding', 'gzip');
   next();
 });
