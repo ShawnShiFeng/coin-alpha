@@ -1,3 +1,7 @@
+body {
+  background: url(../assets/landing.jpg) no-repeat center center fixed;
+  font-family: 'Lato', sans-serif;
+}
 .satori-container {
   width: 90%;
   margin: 100px auto auto auto;
@@ -7,10 +11,28 @@
   align-items: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 .box {
   width: 300px;
   height: 300px;
   padding: 10px;
-  border: 1px solid #000;
-  text-align: center;
+  margin: 2px;
+  border-radius: 5px;
+  border: 0.5px solid #aaa;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333f51;
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  color: #6995c9;
+}
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
 }

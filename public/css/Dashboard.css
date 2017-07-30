@@ -1,0 +1,10 @@
+a {
+  font-family: 'Lato', sans-serif;
+  color: #6995c9;
+}
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
+}

@@ -1,5 +1,5 @@
 body {
-  background: url(../assets/landing.jpg) no-repeat center center fixed ;
+  background: url(../assets/landing.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -23,15 +23,9 @@ a {
   font-family: 'Lato', sans-serif;
   color: #6995c9;
 }
-/*.satori-container {
-  width: 65%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.satori-box {
-  width: 65%;
-  height: 65%;
-  background-color: rgba(25, 25, 112, 0.8);
-}*/
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
+}
