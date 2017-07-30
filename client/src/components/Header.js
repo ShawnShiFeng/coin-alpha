@@ -24,7 +24,7 @@ class Header extends Component {
           <ToolbarTitle text="CoinAlpha" />
         </ToolbarGroup>
         <ToolbarGroup>
-          <a href="/live-update" > Market Data </a>
+          <a href="/satori" > Market Data </a>
           {/* {renderif(this.props.loggedin === true) (
             <div><span>testing text3</span></div>
           )} */}

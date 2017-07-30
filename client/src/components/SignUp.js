@@ -24,11 +24,9 @@ class SignUp extends Component {
   handleSubmit() {
     axios.post('/signup', this.state)
     .then((user) => {
-      console.log(user);
       // save login info to store
     })
     .catch((e) => {
-      console.log(e);
       // TODO: add error handling
     });
   }

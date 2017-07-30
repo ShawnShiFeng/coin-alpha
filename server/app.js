@@ -76,6 +76,10 @@ app.post('/signup', (req, res) => {
   });
 });
 
+app.get('/satori', (req, res) => {
+  res.render('satori');
+});
+
 app.get('*.js', (req, res, next) => {
   req.url += '.gz';
   res.set('Content-Encoding', 'gzip');
