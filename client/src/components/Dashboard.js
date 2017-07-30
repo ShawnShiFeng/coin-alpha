@@ -8,6 +8,7 @@ import { sampleAction, updateFunds } from '../actions';
 import Header from './Header';
 import Menubar from './Menubar';
 import TabBox from './TabBox';
+import MessageBox from './MessageBox';
 
 import './css/Dashboard.css';
 
@@ -89,6 +90,9 @@ class Dashboard extends Component {
     return (
       <div>
         <Header />
+        <div className="bot">
+          <MessageBox />
+        </div>
         <div className="container">
           <Menubar />
           <TabBox />

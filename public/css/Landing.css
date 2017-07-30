@@ -17,6 +17,7 @@ body {
 .spacing-before {
   margin-top: 10px;
   padding-top: 25px;
+  font-family: 'Lato', sans-serif;
 }
 
 .below-header {
