@@ -28,6 +28,13 @@ export const openFunds = () => {
   };
 };
 
+export const openMarket = () => {
+  return {
+    type: 'OPEN_MARKET',
+    showMarket: true,
+  };
+};
+
 export const closePortfolio = () => {
   return {
     type: 'CLOSE_PORTFOLIO',
@@ -62,5 +69,19 @@ export const updateFunds = (userFunds) => {
   return {
     type: 'UPDATE_FUNDS',
     funds: userFunds,
+  };
+};
+
+export const closeMarket = () => {
+  return {
+    type: 'CLOSE_MARKET',
+    showMarket: false,
+  };
+};
+
+export const updateChart = (chartData) => {
+  return {
+    type: 'UPDATE_CHART',
+    chartData,
   };
 };

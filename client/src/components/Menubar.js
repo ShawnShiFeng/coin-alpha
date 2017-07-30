@@ -10,7 +10,17 @@ import Funds from 'material-ui/svg-icons/action/assessment';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { sampleAction, openPortfolio, openActions, openFunds, closePortfolio, closeActions, closeFunds } from '../actions';
+import {
+  sampleAction,
+  openPortfolio,
+  openActions,
+  openFunds,
+  openMarket,
+  closePortfolio,
+  closeActions,
+  closeFunds,
+  closeMarket,
+} from '../actions';
 
 const style = {
   paper: {
@@ -24,31 +34,42 @@ const style = {
   },
 };
 
-class Menubar extends Component{
+class Menubar extends Component {
   constructor(props) {
     super(props);
 
     this.togglePortfolio = this.togglePortfolio.bind(this);
     this.toggleActions = this.toggleActions.bind(this);
     this.toggleFunds = this.toggleFunds.bind(this);
+    this.toggleMarket = this.toggleMarket.bind(this);
   }
 
   togglePortfolio() {
     this.props.openPortfolio();
     this.props.closeActions();
     this.props.closeFunds();
+    this.props.closeMarket();
   }
 
   toggleActions() {
     this.props.closePortfolio();
     this.props.openActions();
     this.props.closeFunds();
+    this.props.closeMarket();
   }
 
   toggleFunds() {
     this.props.closePortfolio();
     this.props.closeActions();
     this.props.openFunds();
+    this.props.closeMarket();
+  }
+
+  toggleMarket() {
+    this.props.closePortfolio();
+    this.props.closeActions();
+    this.props.closeFunds();
+    this.props.openMarket();
   }
 
 
@@ -62,6 +83,7 @@ class Menubar extends Component{
             <MenuItem primaryText="Portfolio" onTouchTap={this.togglePortfolio} leftIcon={<Portfolio />} />
             <MenuItem primaryText="Actions" onTouchTap={this.toggleActions} leftIcon={<Actions />} />
             <MenuItem primaryText="Funds" onTouchTap={this.toggleFunds} leftIcon={<Funds />} />
+            <MenuItem primaryText="Market" onTouchTap={this.toggleMarket} leftIcon={<Funds />} />
           </Menu>
         </Paper>
       </div>
@@ -76,6 +98,7 @@ const mapStateToProps = (state) => {
     showPortfolio: state.tab.showPortfolio,
     showActions: state.tab.showActions,
     showFunds: state.tab.showFunds,
+    showMarket: state.tab.showMarket,
   };
 };
 
@@ -85,9 +108,11 @@ const matchDispatchToProps = (dispatch) => {
     openPortfolio,
     openActions,
     openFunds,
+    openMarket,
     closePortfolio,
     closeActions,
     closeFunds,
+    closeMarket,
   }, dispatch);
 };
 
