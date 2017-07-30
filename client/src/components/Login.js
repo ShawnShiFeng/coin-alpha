@@ -22,9 +22,9 @@ class Login extends Component {
 
   handleSubmit() {
     axios.post('/login', this.state)
-    .then((user) => {
-      this.props.updateUser(user);
-      window.location += 'dashboard';
+    .then((res) => {
+      this.props.updateUser(res.user);
+      window.location = '/dashboard';
     })
     .catch((e) => {
       console.log(e);
@@ -37,13 +37,10 @@ class Login extends Component {
       container: {
         backgroundColor: 'rgba(51, 63, 81, 0.6)',
       },
-      text: {
-        color: '#fff',
-      },
     };
 
     return (
-      <Card className="login-container" style={styles.container} textStyle={styles.text}>
+      <Card className="login-container" style={styles.container}>
         <h2>Login</h2>
         <TextField
           name="email"
@@ -54,11 +51,15 @@ class Login extends Component {
         <TextField
           name="password"
           floatingLabelText="Password"
+          type="password"
           onChange={this.handleChange}
         />
         <br />
+        <br />
         <RaisedButton label="login" onTouchTap={this.handleSubmit} />
-        <a href="/signup">Create Account</a>
+        <br />
+        <br />
+        <RaisedButton label="Create Account" onTouchTap={() => { window.location += 'signup'; }} />
       </Card>
     );
   }

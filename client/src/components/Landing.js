@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -9,22 +8,6 @@ import Login from './Login';
 import { updateUser } from '../actions';
 
 class Landing extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  onChange() {
-  }
-
-  handleSubmit() {
-    // this.props.sampleAction();
-  }
-
   render() {
     return (
       <div>

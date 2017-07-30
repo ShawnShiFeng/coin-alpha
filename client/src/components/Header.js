@@ -24,7 +24,9 @@ class Header extends Component {
           <ToolbarTitle text="CoinAlpha" style={{ color: '#6995c9' }}/>
         </ToolbarGroup>
         <ToolbarGroup>
-          <a href="/satori" > Market Data </a>
+          <a href="/" className="navigation-link"> Home </a>
+          <a href="/satori" className="navigation-link"> Market Data </a>
+          {/* <a href="/fundlist" className="navigation-link"> Funds </a> */}
           {/* {renderif(this.props.loggedin === true) (
             <div><span>testing text3</span></div>
           )} */}

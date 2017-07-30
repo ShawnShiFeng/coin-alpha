@@ -28,8 +28,16 @@ class SignUp extends Component {
 
   handleSubmit() {
     axios.post('/signup', this.state)
-    .then((user) => {
-      this.props.updateUser(user);
+    .then((res) => {
+      this.props.updateUser(res.user);
+      this.setState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        ethWallet: '',
+      });
+      window.location = '/dashboard';
     })
     .catch(() => {
       // TODO: add error handling
@@ -43,31 +51,37 @@ class SignUp extends Component {
         <Card>
           <TextField
             name="firstName"
-            floatingLabelText="Email"
+            floatingLabelText="First Name"
+            value={this.state.firstName}
             onChange={this.handleChange}
           />
           <br />
           <TextField
             name="lastName"
-            floatingLabelText="Email"
+            floatingLabelText="Last Name"
+            value={this.state.lastName}
             onChange={this.handleChange}
           />
           <br />
           <TextField
             name="email"
             floatingLabelText="Email"
+            value={this.state.email}
             onChange={this.handleChange}
           />
           <br />
           <TextField
             name="password"
             floatingLabelText="Password"
+            type="password"
+            value={this.state.password}
             onChange={this.handleChange}
           />
           <br />
           <TextField
             name="ethWallet"
             floatingLabelText="Ethereum Wallet"
+            value={this.state.ethWallet}
             onChange={this.handleChange}
           />
           <br />

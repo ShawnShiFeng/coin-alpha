@@ -59,7 +59,7 @@ export const closeFunds = () => {
 // user actions
 export const updateUser = (user) => {
   return {
-    type: 'CLOSE_FUNDS',
+    type: 'UPDATE_USER',
     user,
   };
 };
