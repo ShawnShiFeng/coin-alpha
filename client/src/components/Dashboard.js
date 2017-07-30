@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { sampleAction, togglePortfolio, toggleActions, toggleFunds } from '../actions';
+import { sampleAction } from '../actions';
 
 // Component
 import Header from './Header';
@@ -13,22 +13,9 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
-    // this.openPortfolio = this.openPortfolio.bind(this);
-    // this.openActions = this.openActions.bind(this);
-    // this.openFunds = this.openFunds.bind(this);
   }
 
-  // openPortfolio() {
-  //   this.props.togglePortfolio();
-  // }
 
-  // openActions() {
-  //   this.props.toggleActions();
-  // }
-
-  // openFunds() {
-  //   this.props.toggleFunds();
-  // }
 
   render() {
     return (
@@ -53,9 +40,6 @@ const mapStateToProps = (state) => {
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
     sampleAction,
-    togglePortfolio,
-    toggleActions,
-    toggleFunds,
   }, dispatch);
 };
 
