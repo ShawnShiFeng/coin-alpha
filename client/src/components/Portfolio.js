@@ -127,15 +127,15 @@ class Portfolio extends Component {
                     return (
                       <TableRow>
                         <TableRowColumn>{item.name}</TableRowColumn>
-                        <TableRowColumn>{item.token}</TableRowColumn>
-                        <TableRowColumn>{item.token * item.purchaseNAV}</TableRowColumn>
-                        <TableRowColumn>{item.currentNAV}</TableRowColumn>
-                        <TableRowColumn>{item.token * item.currentNAV}</TableRowColumn>
-                        <TableRowColumn>{(item.token * item.currentNAV)
-                          - (item.token * item.purchaseNAV)}</TableRowColumn>
-                        <TableRowColumn>{(((item.token * item.currentNAV)
+                        <TableRowColumn>{Math.ceil(item.token)}</TableRowColumn>
+                        <TableRowColumn>{Math.ceil(item.token * item.purchaseNAV)}</TableRowColumn>
+                        <TableRowColumn>{Math.ceil(item.currentNAV)}</TableRowColumn>
+                        <TableRowColumn>{Math.ceil(item.token * item.currentNAV)}</TableRowColumn>
+                        <TableRowColumn>{Math.ceil((item.token * item.currentNAV)
+                          - (item.token * item.purchaseNAV))}</TableRowColumn>
+                        <TableRowColumn>{Math.ceil((((item.token * item.currentNAV)
                           - (item.token * item.purchaseNAV))
-                          / ((item.token * item.purchaseNAV) / 100))}%</TableRowColumn>
+                          / ((item.token * item.purchaseNAV) / 100)))}%</TableRowColumn>
                         <TableRowColumn><button
                           onClick={() => this.removeItem(index)}
                           className="button"
