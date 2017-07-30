@@ -18,9 +18,6 @@ class TabBox extends Component {
   render() {
     return (
       <div>
-        <p>from tabbox</p>
-        <p>hello{this.props.showPortfolio}</p>
-
         {renderif(this.props.showPortfolio === true)(
           <Portfolio />,
         )}
@@ -39,7 +36,7 @@ class TabBox extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    sample: state.sample,
+    sample: state.sample.sample,
     showPortfolio: state.tab.showPortfolio,
     showActions: state.tab.showActions,
     showFunds: state.tab.showFunds,

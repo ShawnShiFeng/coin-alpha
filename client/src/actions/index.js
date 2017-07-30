@@ -1,3 +1,4 @@
+// sample actions
 export const sampleAction = (props) => {
   return {
     type: 'SAMPLE_ACTION',
@@ -5,6 +6,7 @@ export const sampleAction = (props) => {
   };
 };
 
+// tap actions
 export const openPortfolio = () => {
   return {
     type: 'OPEN_PORTFOLIO',
@@ -47,9 +49,18 @@ export const closeFunds = () => {
   };
 };
 
+// user actions
 export const updateUser = (user) => {
   return {
     type: 'CLOSE_FUNDS',
     user,
+  };
+};
+
+// funds actions
+export const updateFunds = (userFunds) => {
+  return {
+    type: 'UPDATE_FUNDS',
+    funds: userFunds,
   };
 };
