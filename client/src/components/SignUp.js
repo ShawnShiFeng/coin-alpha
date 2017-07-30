@@ -28,8 +28,8 @@ class SignUp extends Component {
 
   handleSubmit() {
     axios.post('/signup', this.state)
-    .then((user) => {
-      this.props.updateUser(user);
+    .then((res) => {
+      this.props.updateUser(res.user);
       this.setState({
         firstName: '',
         lastName: '',

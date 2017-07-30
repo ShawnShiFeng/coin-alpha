@@ -80,6 +80,24 @@ app.get('/satori', (req, res) => {
   res.render('satori');
 });
 
+app.get('/fundlist', (req, res) => {
+  res.render('fundlist');
+});
+
+app.get('/funddetails/:id', (req, res) => {
+  res.render('funddetails', req.params);
+});
+
+app.get('/fundinfo/:fundId', (req, res) => {
+  models.Fund.where({ id: req.params.fundId }).fetch()
+  .then((fundInfo) => {
+    res.status(201).send(fundInfo);
+  })
+  .catch(() => {
+    res.status(201).send({ error: 'fund not found' });
+  });
+});
+
 app.get('*.js', (req, res, next) => {
   req.url += '.gz';
   res.set('Content-Encoding', 'gzip');

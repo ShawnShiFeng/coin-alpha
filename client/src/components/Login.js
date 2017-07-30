@@ -22,8 +22,8 @@ class Login extends Component {
 
   handleSubmit() {
     axios.post('/login', this.state)
-    .then((user) => {
-      this.props.updateUser(user);
+    .then((res) => {
+      this.props.updateUser(res.user);
       window.location = '/dashboard';
     })
     .catch((e) => {
