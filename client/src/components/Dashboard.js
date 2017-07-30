@@ -18,72 +18,73 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const data = [
-      {
-        fundName: 'Falcon',
-        orderSize: 5000,
-        allocation: 1000,
-        transferred: false,
-        token: 0,
-        purchaseNAV: 0,
-        currentNAV: 0,
-      },
-      {
-        fundName: 'CryptoCurrency Index',
-        orderSize: 5000,
-        allocation: 1000,
-        transferred: false,
-        token: 0,
-        purchaseNAV: 0,
-        currentNAV: 0,
-      },
-      {
-        fundName: 'ICO Fund',
-        orderSize: 5000,
-        allocation: 2500,
-        transferred: true,
-        token: 70,
-        purchaseNAV: 1000,
-        currentNAV: 1100,
-      },
-            {
-        fundName: 'falcon',
-        orderSize: 70000,
-        allocation: 0,
-        transferred: true,
-        token: 70,
-        purchaseNAV: 1000,
-        currentNAV: 1100,
-      },
-            {
-        fundName: 'falcon',
-        orderSize: 70000,
-        allocation: 0,
-        transferred: true,
-        token: 70,
-        purchaseNAV: 1000,
-        currentNAV: 1100,
-      },
-            {
-        fundName: 'falcon',
-        orderSize: 70000,
-        allocation: 0,
-        transferred: true,
-        token: 70,
-        purchaseNAV: 1000,
-        currentNAV: 1100,
-      },
-    ];
-    this.props.updateFunds(data);
-    // axios.get('/getUserFunds')
-    // .then((response) => {
-    //   // update user funds array
-    //   console.log(response.data);
-    //   this.props.updateFunds(data);
-    // })
-    // .catch((err) => {
-    //   console.error('failed to get user funds, ', err);
-    // });
+
+    // const data = [
+    //   {
+    //     fundName: 'Falcon',
+    //     orderSize: 5000,
+    //     allocation: 1000,
+    //     transferred: false,
+    //     token: 0,
+    //     purchaseNAV: 0,
+    //     currentNAV: 0,
+    //   },
+    //   {
+    //     fundName: 'CryptoCurrency Index',
+    //     orderSize: 5000,
+    //     allocation: 1000,
+    //     transferred: false,
+    //     token: 0,
+    //     purchaseNAV: 0,
+    //     currentNAV: 0,
+    //   },
+    //   {
+    //     fundName: 'ICO Fund',
+    //     orderSize: 5000,
+    //     allocation: 2500,
+    //     transferred: true,
+    //     token: 70,
+    //     purchaseNAV: 1000,
+    //     currentNAV: 1100,
+    //   },
+    //         {
+    //     fundName: 'falcon',
+    //     orderSize: 70000,
+    //     allocation: 0,
+    //     transferred: true,
+    //     token: 70,
+    //     purchaseNAV: 1000,
+    //     currentNAV: 1100,
+    //   },
+    //         {
+    //     fundName: 'falcon',
+    //     orderSize: 70000,
+    //     allocation: 0,
+    //     transferred: true,
+    //     token: 70,
+    //     purchaseNAV: 1000,
+    //     currentNAV: 1100,
+    //   },
+    //         {
+    //     fundName: 'falcon',
+    //     orderSize: 70000,
+    //     allocation: 0,
+    //     transferred: true,
+    //     token: 70,
+    //     purchaseNAV: 1000,
+    //     currentNAV: 1100,
+    //   },
+    // ];
+    // this.props.updateFunds(data);
+    axios.get('/fundlist')
+    .then((response) => {
+      // update user funds array
+      console.log(response.data);
+      this.props.updateFunds(response.data);
+    })
+    .catch((err) => {
+      console.error('failed to get user funds, ', err);
+    });
   }
 
   render() {

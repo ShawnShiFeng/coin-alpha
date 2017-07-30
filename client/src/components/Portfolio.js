@@ -44,7 +44,7 @@ class Portfolio extends Component {
       <div>
         <table className="table-top-spacing">
           {
-            this.props.funds.map((item) => {
+            this.props.funds.map((item, index) => {
               this.test();
               if (item) {
                 if (item.transferred === false) {
@@ -54,10 +54,10 @@ class Portfolio extends Component {
                         <td className="item-spacing subscription-text outstanding-subscription">
                           Outstanding Subscription: </td>
                         <td className="item-spacing subscription-text text-box">
-                          {item.fundName}</td>
+                          {item.name}</td>
                         <td className="item-spacing subscription-text text-box">
                           {item.allocation}</td>
-                        <td><Metamask amount={item.allocation} /></td>
+                        <td><Metamask index={index} amount={item.allocation} /></td>
                       </tr>
                     </div>
                   );
@@ -85,7 +85,7 @@ class Portfolio extends Component {
                   if (item.transferred === true) {
                     return (
                       <tr>
-                        <td className="outstanding-subscription">{item.fundName}</td>
+                        <td className="outstanding-subscription">{item.name}</td>
                         <td>{item.token}</td>
                         <td>{item.purchaseNAV}</td>
                         <td>{item.token * item.purchaseNAV}</td>
