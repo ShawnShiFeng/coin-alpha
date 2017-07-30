@@ -21,7 +21,7 @@ class Header extends Component {
           <span style={{ marginRight: 8 }}>
             <img src={'assets/coinAlpha.png'} alt={''} width={35} />
           </span>
-          <ToolbarTitle text="CoinAlpha" />
+          <ToolbarTitle text="CoinAlpha" style={{ color: '#6995c9' }}/>
         </ToolbarGroup>
         <ToolbarGroup>
           <a href="/satori" > Market Data </a>
