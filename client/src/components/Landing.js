@@ -10,6 +10,7 @@ import Login from './Login';
 import { sampleAction } from '../actions';
 import Satori from './Satori';
 import Portfolio from './Portfolio';
+import Funds from './Funds';
 // import './css/App.css';
 
 class Landing extends Component {
@@ -36,6 +37,7 @@ class Landing extends Component {
       <div>
         <Satori />
         <Dashboard />
+        <Funds />
         <Portfolio />
         <Login />
       </div>
