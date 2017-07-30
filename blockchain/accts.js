@@ -19,8 +19,8 @@ const privateKeyToAddress = privateKey =>
   `0x${EthUtil.privateToAddress(hexToBytes(privateKey)).toString('hex')}`;
 
 const mint = {
-  balance: web3.utils.toWei(1000000000, 'ether'),
-  secretKey: web3.utils.sha3('InGodWeTrust'),
+  balance: web3.toWei(1000000000, 'ether'),
+  secretKey: web3.sha3('InGodWeTrust'),
 };
 
 const mintWallet = privateKeyToAddress(mint.secretKey.substr(2, 64));
