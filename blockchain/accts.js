@@ -6,7 +6,6 @@ const web3 = new Web3(new Web3.providers.HttpProvider(`http://localhost:${PORT}`
 
 
 // Wallet address helper functions
-
 const hexToBytes = (hex) => {
   const bytes = [];
   for (let c = 0; c < hex.length; c += 2) {
