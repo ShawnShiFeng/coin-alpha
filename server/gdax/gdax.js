@@ -8,9 +8,9 @@ const getGDAXHistoricRates = (productId, start, end, granularity) => {
   const gdxURL = `https://api.gdax.com/products/${productId}/candles?start=${start}&end=${end}&granularity=${granularity}`;
   return axios.get(gdxURL)
   .then((res) => {
-    const filterData = res.data.map((dataPoint) => {
-      const date = new Date(dataPoint[0]);
-      return { time: date,
+    const filterData = res.data.reverse().map((dataPoint) => {
+      return {
+        date: dataPoint[0],
         low: dataPoint[1],
         high: dataPoint[2],
         open: dataPoint[3],
