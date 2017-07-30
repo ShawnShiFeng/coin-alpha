@@ -1,6 +1,6 @@
 const TestRPC = require('ethereumjs-testrpc');
 const ethAddresses = require('./accts');
-const mmWallets = require('./mmWallets');
+// const mmWallets = require('./mmWallets');
 const ethHelpers = require('./helpers');
 
 const PORT = 8545;
@@ -25,6 +25,6 @@ server.listen(PORT, (err, blockchain) => {
       fields.forEach(field => console.log(field, ': ', accountsObj[account][field].toString('hex')));
       console.log('balance: ', accountsObj[account].account.balance.toString('hex'));
     }
-    mmWallets.forEach(wallet => (ethHelpers.fundFromMint(1000, wallet)));
+    // mmWallets.forEach(wallet => (ethHelpers.fundFromMint(1000, wallet)));
   }
 });

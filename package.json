@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "start:dev": "webpack-dev-server --inline --hot",
     "build:dev": "webpack --watch",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack -p",
+    "blockchain": "node blockchain"
   },
   "repository": {
     "type": "git",
@@ -64,7 +65,7 @@
     "render-if": "^0.1.1",
     "satori-rtm-sdk": "^1.0.2",
     "seamless-immutable": "^7.1.2",
-    "web3": "^0.20.0",
+    "web3": "0.20.0",
     "webpack": "^3.4.1"
   }
 }
