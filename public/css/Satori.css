@@ -16,7 +16,7 @@ h1 {
 }
 
 .box {
-  width: 300px;
+  width: 280px;
   height: 300px;
   padding: 10px;
   margin: 2px;
@@ -35,4 +35,18 @@ a.navigation-link {
   padding: 0px 10px;
   word-wrap: normal;
   display: inline-block;
+}
+
+.credit-satori {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #333f51;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5px;
+  margin: 0 auto 0 auto;
+  width: 15%;
+  text-align: center;
+  border-radius: 3px;
 }
