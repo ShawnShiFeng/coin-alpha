@@ -16,7 +16,6 @@ import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import Satori from './components/Satori';
-import FundList from './components/FundList';
 import FundDetails from './components/FundDetails';
 
 // createLogger can be turned off for product
@@ -51,9 +50,6 @@ const element = () => {
   } else if (document.getElementById('satori')) {
     compName = 'satori';
     return (<Satori />);
-  } else if (document.getElementById('fundlist')) {
-    compName = 'fundlist';
-    return (<FundList />);
   } else if (document.getElementById('funddetails')) {
     compName = 'funddetails';
     return (<FundDetails />);

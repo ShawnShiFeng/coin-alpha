@@ -1,40 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {
+  Card,
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui';
+import axios from 'axios';
 
-const Funds = () => (
-  <div>
-    <div>
-      <p>-----Falcon-----</p>
+class Funds extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fundList: [],
+    };
+  }
+
+  componentDidMount() {
+    axios.get('/fundlist')
+    .then((res) => {
+      this.setState({ fundList: res.data });
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  }
+
+  render() {
+    return (
       <div>
-        <table>
-          <tr>
-            <td>Launch Date</td>
-            <td>1-Sep-2017</td>
-          </tr>
-          <tr>
-            <td>Current NAV</td>
-            <td>1,100.00</td>
-          </tr>
-          <tr>
-            <td>NAV Date</td>
-            <td>25-Jul-2017</td>
-          </tr>
-          <tr>
-            <button>Fund Performance</button>
-          </tr>
-          <tr>
-            <button>EtherScan</button>
-          </tr>
-        </table>
+        <Card>
+          <Table multiSelectable>
+            <TableHeader>
+              <TableRow>
+                <TableHeaderColumn>Name</TableHeaderColumn>
+                <TableHeaderColumn>Current NAV</TableHeaderColumn>
+                <TableHeaderColumn>Purchase NAV</TableHeaderColumn>
+                <TableHeaderColumn>Allocation</TableHeaderColumn>
+                <TableHeaderColumn>Order Size</TableHeaderColumn>
+                <TableHeaderColumn>Details</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {this.state.fundList.map((fund) => {
+                let link = '/funddetails/' + fund.id;
+                return (
+                  <TableRow>
+                    <TableRowColumn>{fund.name}</TableRowColumn>
+                    <TableRowColumn>{fund.currentNAV}</TableRowColumn>
+                    <TableRowColumn>{fund.purchaseNAV}</TableRowColumn>
+                    <TableRowColumn>{fund.allocation}</TableRowColumn>
+                    <TableRowColumn>{fund.order_size}</TableRowColumn>
+                    <TableRowColumn><a href={link}> Learn More </a></TableRowColumn>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Card>
       </div>
-      <div>
-        <p>*Insert Pie Chart here*</p>
-      </div>
-    </div>
-    <div>
-      <p>-----Fund Performance-----</p>
-      <p>*Insert Graph Here*</p>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 export default Funds;

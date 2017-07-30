@@ -81,7 +81,13 @@ app.get('/satori', (req, res) => {
 });
 
 app.get('/fundlist', (req, res) => {
-  res.render('fundlist');
+  models.Fund.fetchAll()
+  .then((data) => {
+    res.send(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 });
 
 app.get('/funddetails/:id', (req, res) => {
