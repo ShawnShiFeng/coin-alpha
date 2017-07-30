@@ -55,7 +55,7 @@ class MessageBox extends Component {
       const scrollBox = document.getElementById('message-box-body');
       scrollBox.scrollTop = scrollBox.scrollHeight;
       const m = {
-        who: 'Yvonne',
+        who: this.props.firstName,
         message: this.state.myMessage,
         timeStamp: new Date(),
       };

@@ -25,12 +25,11 @@ class Login extends Component {
   handleSubmit() {
     axios.post('/login', this.state)
     .then((res) => {
-      this.props.updateUser(res.user);
-      window.location = '/dashboard';
+      this.props.updateUser(res.data);
+      window.location = '/dashboard/' + res.data.first_name;
     })
     .catch((e) => {
       console.log(e);
-      // TODO: add error handling
     });
   }
 
@@ -49,7 +48,7 @@ class Login extends Component {
               <td><p className="header-signin">Sign In</p></td>
             </tr>
             <tr>
-              <td className="spacing-before input-heading">User ID</td>
+              <td className="spacing-before input-heading">Email</td>
             </tr>
             <tr>
               <td><input

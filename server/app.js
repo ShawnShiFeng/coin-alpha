@@ -22,8 +22,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+  res.render('dashboard', req.params);
 });
+
 
 app.get('/login', (req, res) => {
   res.render('login');
@@ -32,8 +33,8 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   models.Investor.where({ email: req.body.email }).fetch()
   .then((user) => {
-    if (user.password === req.body.password) {
-      res.status(201).send(user);
+    if (user.attributes.password === req.body.password) {
+      res.status(201).send(user.attributes);
     } else throw new Error();
   })
   .catch(() => {
