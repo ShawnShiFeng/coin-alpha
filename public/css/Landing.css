@@ -18,6 +18,11 @@ body {
 h2 {
   color: #6995c9;
 }
+
+a {
+  font-family: 'Lato', sans-serif;
+  color: #6995c9;
+}
 /*.satori-container {
   width: 65%;
   display: flex;
