@@ -3,7 +3,7 @@ import React from 'react';
 const Portfolio = () => (
   <div>
     <div>
-      <p>subscription</p>
+      <p>-----Subscription-----</p>
       <table>
         <tr>
           <td>Fund Name</td>
@@ -29,7 +29,7 @@ const Portfolio = () => (
       </table>
     </div>
     <div>
-      <p>holding details</p>
+      <p>-----Holding Details-----</p>
       <table>
         <tr>
           <td>Tokens</td>
