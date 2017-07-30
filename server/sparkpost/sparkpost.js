@@ -1,8 +1,6 @@
 const SparkPost = require('sparkpost');
 const sparky = new SparkPost('1dcf71fcfc0c7f575fa2369170e9f2455ceb4a81');
 
-
-
 const sendMail = () => {
   const mail = {
     subject: 'test mail',

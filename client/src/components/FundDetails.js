@@ -9,6 +9,7 @@ class FundDetails extends Component {
     this.state = {
       id: null,
       name: '',
+      description: '',
       btc_address: '',
       eth_address: '',
       ltc_address: '',
@@ -47,11 +48,27 @@ class FundDetails extends Component {
         <Card>
           <h1>{this.state.name}</h1>
           <div>
-            BTC Address: {this.state.btc_address} <br />
-            ETH Address: {this.state.eth_address} <br />
-            LTC Address: {this.state.ltc_address} <br />
-            USD Address: {this.state.usd_address} <br />
-            Launch Date: {this.state.launch_date}
+            <h3>Description</h3>
+            <p>{this.state.description}</p>
+            <h3>Summary Statistics</h3>
+            <table>
+              <tr>
+                <td>Launch Date:</td>
+                <td>{this.state.launch_date}</td>
+              </tr>
+              <tr>
+                <td>Annualized Return</td>
+                <td>169.3%</td>
+              </tr>
+              <tr>
+                <td>Annualized Volatility</td>
+                <td>56.4%</td>
+              </tr>
+              <tr>
+                <td>Sharpe Ratio</td>
+                <td>2.04</td>
+              </tr>
+            </table>
           </div>
           <br />
           <RaisedButton label="Subscribe" onTouchTap={this.subscribe} />
