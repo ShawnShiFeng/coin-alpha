@@ -1,6 +1,17 @@
 a {
-  font-family: 'Lato', sans-serif;
+  font-family: Lato, sans-serif;
   color: #6995c9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  font-weight: bold;
+}
+
+a:active {
+  color: #888888;
+  font-weight: bold;
 }
 
 a.navigation-link {

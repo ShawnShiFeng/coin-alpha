@@ -1,18 +1,39 @@
+html {
+  height: 100%;
+}
+
 body {
   background: url(../assets/landing.jpg) no-repeat center center fixed;
   background-size: cover;
+  height: 100%;
+  display: table;
+}
+
+.header-signin {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.spacing-before {
+  margin-top: 10px;
+  padding-top: 25px;
 }
 
 .below-header {
-  display: flex;
-  flex-direction: row;
-  height: 630px;
+  display: table;
+  height: 100vh;
+}
+
+.input-heading {
+  color: #888888;
 }
 
 .login-container {
-  width: 35%;
+  font-family: Lato, sans-serif;
+  width: 420px;
   height: 100%;
   padding: 5%;
+  display: table;
 }
 
 h2 {
@@ -20,9 +41,27 @@ h2 {
 }
 
 a {
-  font-family: 'Lato', sans-serif;
+  font-family: Lato, sans-serif;
   color: #6995c9;
+  text-decoration: none;
 }
+
+a:hover {
+  color: white;
+  font-weight: bold;
+}
+
+a:active {
+  color: #888888;
+  font-weight: bold;
+}
+
+a.navigation-link {
+  padding: 0px 10px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
 
 a.navigation-link {
   padding: 0px 10px;

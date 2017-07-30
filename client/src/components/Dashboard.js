@@ -19,27 +19,27 @@ class Dashboard extends Component {
   componentDidMount() {
     const data = [
       {
-        fundName: 'falcon',
-        orderSize: 100000,
-        allocation: 50000,
+        fundName: 'Falcon',
+        orderSize: 5000,
+        allocation: 1000,
         transferred: false,
         token: 0,
         purchaseNAV: 0,
         currentNAV: 0,
       },
       {
-        fundName: 'mocking bird',
-        orderSize: 80000,
-        allocation: 40000,
+        fundName: 'CryptoCurrency Index',
+        orderSize: 5000,
+        allocation: 1000,
         transferred: false,
         token: 0,
         purchaseNAV: 0,
         currentNAV: 0,
       },
       {
-        fundName: 'falcon',
-        orderSize: 70000,
-        allocation: 0,
+        fundName: 'ICO Fund',
+        orderSize: 5000,
+        allocation: 2500,
         transferred: true,
         token: 70,
         purchaseNAV: 1000,
@@ -63,7 +63,9 @@ class Dashboard extends Component {
       <div>
         <Header />
         <div className="container">
+          <h3>Current Allocations</h3>
           <Menubar />
+          <h3>Holdings</h3>
           <TabBox />
         </div>
       </div>
