@@ -8,7 +8,8 @@
     "start": "nodemon server/index.js",
     "start:dev": "webpack-dev-server --inline --hot",
     "build:dev": "webpack --watch",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack -p",
+    "blockchain": "node blockchain"
   },
   "repository": {
     "type": "git",
