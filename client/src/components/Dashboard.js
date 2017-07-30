@@ -12,10 +12,7 @@ import TabBox from './TabBox';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-
   }
-
-
 
   render() {
     return (
@@ -45,4 +42,3 @@ const matchDispatchToProps = (dispatch) => {
 
 
 export default connect(mapStateToProps, matchDispatchToProps)(Dashboard);
-

@@ -46,3 +46,10 @@ export const closeFunds = () => {
     showFunds: false,
   };
 };
+
+export const updateUser = (user) => {
+  return {
+    type: 'CLOSE_FUNDS',
+    user,
+  };
+};

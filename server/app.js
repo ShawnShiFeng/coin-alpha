@@ -31,7 +31,9 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   models.Investor.where({ email: req.body.email }).fetch()
   .then((user) => {
-    res.status(201).send(user);
+    if (user.password === req.body.password) {
+      res.status(201).send(user);
+    } else throw new Error();
   })
   .catch(() => {
     res.status(201).send({ error: 'user not found' });
@@ -72,6 +74,10 @@ app.post('/signup', (req, res) => {
   .catch(() => {
     res.status(201).send({ error: 'signup error' });
   });
+});
+
+app.get('/satori', (req, res) => {
+  res.render('satori');
 });
 
 app.get('*.js', (req, res, next) => {

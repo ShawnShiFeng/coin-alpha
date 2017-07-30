@@ -3,15 +3,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// Component
-import Dashboard from './Dashboard';
+// Components
+import Header from './Header';
 import Login from './Login';
-
-import { sampleAction } from '../actions';
-import Satori from './Satori';
-import Portfolio from './Portfolio';
-import Funds from './Funds';
-// import './css/App.css';
+import { updateUser } from '../actions';
 
 class Landing extends Component {
   constructor(props) {
@@ -31,12 +26,12 @@ class Landing extends Component {
   }
 
   render() {
-    // const { sample } = this.props;
-
     return (
       <div>
-        <Satori />
-        <Login />
+        <Header />
+        <div className="below-header">
+          <Login {...this.props} />
+        </div>
       </div>
     );
   }
@@ -51,7 +46,7 @@ function mapStateToProps(state) {
 
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    sampleAction,
+    updateUser,
   }, dispatch);
 };
 
