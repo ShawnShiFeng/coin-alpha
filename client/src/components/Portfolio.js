@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 
 import './css/Portfolio.css';
 
+import Metamask from './Metamask'
+
 class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +35,7 @@ class Portfolio extends Component {
                           {item.fundName}</td>
                         <td className="item-spacing subscription-text text-box">
                           {item.allocation}</td>
-                        <td><button>Transfer</button></td>
+                        <td><Metamask amount={item.allocation} /></td>
                       </tr>
                     </div>
                   );
