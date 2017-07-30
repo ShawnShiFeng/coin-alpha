@@ -76,13 +76,9 @@ a.navigation-link {
   width: 310px;
   height: 290px;
   overflow: auto;
-}
-
-#message-box-body::after {
-  /*background-color: rgba(255, 255, 255, 0.8);*/
+  background-color: rgba(255, 255, 255, 0.8);
   background-image: url(../assets/satori-no-logo.png);
   background-size: cover;
-  opacity: 0.5;
 }
 
 .message {
