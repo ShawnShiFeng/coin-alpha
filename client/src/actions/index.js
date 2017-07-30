@@ -85,3 +85,39 @@ export const updateChart = (chartData) => {
     chartData,
   };
 };
+
+export const updateStartDate = (start) => {
+  return {
+    type: 'UPDATE_START_DATE',
+    start,
+  };
+};
+
+export const updateEndDate = (end) => {
+  return {
+    type: 'UPDATE_END_DATE',
+    end,
+  };
+};
+
+export const updateGranularity = (granularity) => {
+  return {
+    type: 'UPDATE_GRANULARITY',
+    granularity,
+  };
+};
+
+export const updateDateRange = (dateRange) => {
+  return {
+    type: 'UPDATE_DATE_RANGE',
+    dateRange,
+  };
+};
+
+export const updateProductId = (productId) => {
+  return {
+    type: 'UPDATE_PRODUCT_ID',
+    productId,
+  };
+};
+
