@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { RaisedButton, TextField, Card } from 'material-ui';
+import Header from './Header';
 
 class SignUp extends Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class SignUp extends Component {
 
   handleSubmit() {
     axios.post('/signup', this.state)
-    .then(() => {
+    .then((user) => {
+      console.log(user);
       // save login info to store
     })
     .catch((e) => {
@@ -33,27 +35,30 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Card>
-        <TextField
-          name="email"
-          floatingLabelText="Email"
-          onChange={this.handleChange}
-        />
-        <br />
-        <TextField
-          name="passoword"
-          floatingLabelText="Password"
-          onChange={this.handleChange}
-        />
-        <br />
-        <TextField
-          name="ethWallet"
-          floatingLabelText="Ethereum Wallet"
-          onChange={this.handleChange}
-        />
-        <br />
-        <RaisedButton label="sign up" onTouchTap={this.handleSubmit} />
-      </Card>
+      <div>
+        <Header />
+        <Card>
+          <TextField
+            name="email"
+            floatingLabelText="Email"
+            onChange={this.handleChange}
+          />
+          <br />
+          <TextField
+            name="password"
+            floatingLabelText="Password"
+            onChange={this.handleChange}
+          />
+          <br />
+          <TextField
+            name="ethWallet"
+            floatingLabelText="Ethereum Wallet"
+            onChange={this.handleChange}
+          />
+          <br />
+          <RaisedButton label="sign up" onTouchTap={this.handleSubmit} />
+        </Card>
+      </div>
     );
   }
 }

@@ -53,7 +53,7 @@ class Login extends Component {
         />
         <br />
         <TextField
-          name="passoword"
+          name="password"
           floatingLabelText="Password"
           onChange={this.handleChange}
         />

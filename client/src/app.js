@@ -14,6 +14,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import reducers from './reducers';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
+import SignUp from './components/SignUp';
 
 // createLogger can be turned off for product
 const middleware = [thunk, createLogger()];
@@ -41,8 +42,10 @@ const element = () => {
   } else if (document.getElementById('dashboard')) {
     compName = 'dashboard';
     return (<Dashboard />);
+  } else if (document.getElementById('signup')) {
+    compName = 'signup';
+    return (<SignUp />);
   }
-  // else if (document.getElementById('login')) return (<Login />);
   // else if (document.getElementById('signup')) return (<SignUp />);
 };
 
