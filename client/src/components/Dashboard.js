@@ -90,9 +90,7 @@ class Dashboard extends Component {
       <div>
         <Header />
         <div className="container">
-          <h3>Current Allocations</h3>
           <Menubar />
-          <h3>Holdings</h3>
           <TabBox />
         </div>
       </div>

@@ -6,6 +6,8 @@ import Divider from 'material-ui/Divider';
 import Portfolio from 'material-ui/svg-icons/action/account-balance';
 import Actions from 'material-ui/svg-icons/action/account-box';
 import Funds from 'material-ui/svg-icons/action/assessment';
+import MarketIcon from 'material-ui/svg-icons/action/trending-up';
+
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -84,7 +86,7 @@ class Menubar extends Component {
             <MenuItem primaryText="Portfolio" onTouchTap={this.togglePortfolio} leftIcon={<Portfolio />} />
             <MenuItem primaryText="Activate Your Account" onTouchTap={this.toggleActions} leftIcon={<Actions />} />
             <MenuItem primaryText="Funds" onTouchTap={this.toggleFunds} leftIcon={<Funds />} />
-            <MenuItem primaryText="Market" onTouchTap={this.toggleMarket} leftIcon={<Funds />} />
+            <MenuItem primaryText="Market" onTouchTap={this.toggleMarket} leftIcon={<MarketIcon />} />
           </Menu>
         </Paper>
       </div>
