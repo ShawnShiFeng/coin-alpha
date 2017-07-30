@@ -25,15 +25,16 @@ const style = {
   paper: {
     display: 'inline-block',
     float: 'left',
-    margin: '16px 0 0 0',
-    width: '80%',
+    margin: '0 0 0 2vw',
+    width: '70vw',
   },
   button: {
     // margin: 12,
   },
   table: {
-    margin: '16px 0 0 0',
-    width: '80%',
+    margin: '0 0 0 2vw',
+    width: '70vw',
+    display: 'table-cell',
   },
   col: {
     textAlign: 'right',
