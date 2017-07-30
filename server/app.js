@@ -60,7 +60,7 @@ app.post('/gdax', (req, res) => {
 });
 
 app.post('/sendmail', (req, res) => {
-  sendMail();
+  sendMail(req.body);
   res.send();
 });
 
