@@ -36,13 +36,7 @@ class Landing extends Component {
     return (
       <div>
         <Satori />
-<<<<<<< HEAD
-        <Dashboard />
-        <Funds />
-        <Portfolio />
         <Login />
-=======
->>>>>>> add switch tab feature
       </div>
     );
   }
