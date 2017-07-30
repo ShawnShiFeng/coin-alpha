@@ -77,11 +77,14 @@ class Menubar extends Component {
 
 
   render() {
+    // console.log('***********************', this.props);
+    const greeting = 'Welcome, ' + this.props.user.first_name;
+
     return (
       <div>
         <Paper style={style.paper}>
           <Menu>
-            <MenuItem primaryText="Welcome XXXXXX" />
+            <MenuItem primaryText={greeting} />
             <Divider />
             <MenuItem primaryText="Portfolio" onTouchTap={this.togglePortfolio} leftIcon={<Portfolio />} />
             <MenuItem primaryText="Activate Your Account" onTouchTap={this.toggleActions} leftIcon={<Actions />} />
@@ -97,6 +100,7 @@ class Menubar extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    user: state.user,
     sample: state.sample,
     showPortfolio: state.tab.showPortfolio,
     showActions: state.tab.showActions,

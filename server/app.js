@@ -32,8 +32,8 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   models.Investor.where({ email: req.body.email }).fetch()
   .then((user) => {
-    if (user.password === req.body.password) {
-      res.status(201).send(user);
+    if (user.attributes.password === req.body.password) {
+      res.status(201).send(user.attributes);
     } else throw new Error();
   })
   .catch(() => {

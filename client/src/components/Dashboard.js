@@ -104,7 +104,9 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(")000000000000000000", state.user);
   return {
+    user: state.user,
     sample: state.sample,
     showPortfolio: state.showPortfolio,
     showActions: state.showActions,
