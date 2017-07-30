@@ -81,7 +81,7 @@ class Menubar extends Component {
             <MenuItem primaryText="Welcome XXXXXX" />
             <Divider />
             <MenuItem primaryText="Portfolio" onTouchTap={this.togglePortfolio} leftIcon={<Portfolio />} />
-            <MenuItem primaryText="Actions" onTouchTap={this.toggleActions} leftIcon={<Actions />} />
+            <MenuItem primaryText="Activate Your Account" onTouchTap={this.toggleActions} leftIcon={<Actions />} />
             <MenuItem primaryText="Funds" onTouchTap={this.toggleFunds} leftIcon={<Funds />} />
             <MenuItem primaryText="Market" onTouchTap={this.toggleMarket} leftIcon={<Funds />} />
           </Menu>
