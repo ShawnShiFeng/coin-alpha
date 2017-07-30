@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { RaisedButton, TextField, Card } from 'material-ui';
 
+import './css/Login.css';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -40,27 +42,45 @@ class Login extends Component {
     };
 
     return (
-      <Card className="login-container" style={styles.container}>
-        <h2>Login</h2>
-        <TextField
-          name="email"
-          floatingLabelText="Email"
-          onChange={this.handleChange}
-        />
-        <br />
-        <TextField
-          name="password"
-          floatingLabelText="Password"
-          type="password"
-          onChange={this.handleChange}
-        />
-        <br />
-        <br />
-        <RaisedButton label="login" onTouchTap={this.handleSubmit} />
-        <br />
-        <br />
-        <RaisedButton label="Create Account" onTouchTap={() => { window.location += 'signup'; }} />
-      </Card>
+      <div className="login-container" style={styles.container}>
+        <table className="login-table">
+          <tbody>
+            <tr>
+              <td><p className="header-signin">Sign In</p></td>
+            </tr>
+            <tr>
+              <td className="spacing-before input-heading">User ID</td>
+            </tr>
+            <tr>
+              <td><input
+                type="text"
+                name="email"
+                floatingLabelText="Email"
+                className="login-input"
+                onChange={this.handleChange}
+              /></td>
+            </tr>
+            <tr>
+              <td className="input-heading">Password</td>
+            </tr>
+            <tr>
+              <td><input
+                name="password"
+                floatingLabelText="Password"
+                type="password"
+                className="login-input"
+                onChange={this.handleChange}
+              /></td>
+            </tr>
+            <tr>
+              <td className="spacing-before"><div className="login-button" onTouchTap={this.handleSubmit} >Login</div></td>
+            </tr>
+            <tr>
+              <td><div className="login-button" onTouchTap={() => { window.location += 'signup'; }} >Sign-Up</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
