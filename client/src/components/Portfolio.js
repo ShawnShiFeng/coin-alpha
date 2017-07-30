@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import './css/Portfolio.css';
+
 class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -17,27 +19,24 @@ class Portfolio extends Component {
     return (
       <div>
         <div>
-          <p>-----Subscription-----</p>
           <table>
-            <tr>
-              <td>Fund Name</td>
-              <td>Order Size</td>
-              <td>Allocation</td>
-              <td>Actions</td>
-            </tr>
-
             {
               this.props.funds.map((item) => {
                 this.test();
                 if (item) {
                   if (item.transferred === false) {
                     return (
-                      <tr>
-                        <td>{item.fundName}</td>
-                        <td>{item.orderSize}</td>
-                        <td>{item.allocation}</td>
-                        <td><button>Transfer</button></td>
-                      </tr>
+                      <div className="subscription-box">
+                        <tr>
+                          <td className="item-spacing subscription-text outstanding-subscription">
+                            Outstanding Subscription: </td>
+                          <td className="item-spacing subscription-text text-box">
+                            {item.fundName}</td>
+                          <td className="item-spacing subscription-text text-box">
+                            {item.allocation}</td>
+                          <td><button>Transfer</button></td>
+                        </tr>
+                      </div>
                     );
                   }
                 }
@@ -46,7 +45,6 @@ class Portfolio extends Component {
           </table>
         </div>
         <div>
-          <p>-----Holding Details-----</p>
           <table>
             <tr>
               <td>Fund Name</td>

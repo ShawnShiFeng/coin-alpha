@@ -1,0 +1,21 @@
+.item-spacing {
+  padding-right: 6vh;
+}
+
+.subscription-text {
+  font-size: 3.5vh;
+}
+
+.outstanding-subscription {
+  padding-left: 6vh;
+}
+
+.text-box {
+  width: 20vh;
+}
+.subscription-box {
+  border: solid;
+  border-bottom-width: 1px;
+  border-radius: 5px;
+  margin:  1.5vh;
+}
