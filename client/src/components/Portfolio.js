@@ -56,17 +56,21 @@ class Portfolio extends Component {
       },
       text: {
         color: 'white',
+        fontSize: '1vw',
       },
       text2: {
         color: 'black',
+        fontSize: '1vw',
       },
       title: {
         fontWeight: 'bold',
         color: 'white',
+        fontSize: '1vw',
       },
       title2: {
         fontWeight: 'bold',
         color: 'black',
+        fontSize: '1vw',
       },
     };
     return (
@@ -114,7 +118,7 @@ class Portfolio extends Component {
                 <TableHeaderColumn style={style.title2}>Purchase NAV</TableHeaderColumn>
                 <TableHeaderColumn style={style.title2}>Initial Investment</TableHeaderColumn>
                 <TableHeaderColumn style={style.title2}>Current NAV</TableHeaderColumn>
-                <TableHeaderColumn style={style.title2}>Current Market Value</TableHeaderColumn>
+                <TableHeaderColumn style={style.title2}>CMV</TableHeaderColumn>
                 <TableHeaderColumn style={style.title2}>Total Gain $</TableHeaderColumn>
                 <TableHeaderColumn style={style.title2}>Total Gain %</TableHeaderColumn>
               </TableRow>
@@ -126,17 +130,17 @@ class Portfolio extends Component {
                   if (item.transferred === true) {
                     return (
                       <TableRow>
-                        <TableRowColumn>{item.name}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil(item.token)}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil(item.token * item.purchaseNAV)}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil(item.currentNAV)}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil(item.token * item.currentNAV)}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil((item.token * item.currentNAV)
+                        <TableRowColumn style={style.text2}>{item.name}</TableRowColumn>
+                        <TableRowColumn style={style.text2}>{Math.ceil(item.token)}</TableRowColumn>
+                        <TableRowColumn style={style.text2}>{Math.ceil(item.token * item.purchaseNAV)}</TableRowColumn>
+                        <TableRowColumn style={style.text2}>{Math.ceil(item.currentNAV)}</TableRowColumn>
+                        <TableRowColumn style={style.text2}>{Math.ceil(item.token * item.currentNAV)}</TableRowColumn>
+                        <TableRowColumn style={style.text2}>{Math.ceil((item.token * item.currentNAV)
                           - (item.token * item.purchaseNAV))}</TableRowColumn>
-                        <TableRowColumn>{Math.ceil((((item.token * item.currentNAV)
+                        <TableRowColumn style={style.text2}>{Math.ceil((((item.token * item.currentNAV)
                           - (item.token * item.purchaseNAV))
                           / ((item.token * item.purchaseNAV) / 100)))}%</TableRowColumn>
-                        <TableRowColumn><button
+                        <TableRowColumn style={style.text2}><button
                           onClick={() => this.removeItem(index)}
                           className="button"
                           type="button">Redeem</button></TableRowColumn>
@@ -149,8 +153,6 @@ class Portfolio extends Component {
             </TableBody>
           </Table>
         </Card>
-
-        <button onClick={this.sendMail} >test sparkpost</button>
       </div>
     );
   }
