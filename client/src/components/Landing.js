@@ -37,6 +37,7 @@ class Landing extends Component {
         <Satori />
         <Dashboard />
         <Funds />
+        <Portfolio />
       </div>
     );
   }
